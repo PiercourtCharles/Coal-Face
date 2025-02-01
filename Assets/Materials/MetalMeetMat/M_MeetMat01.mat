@@ -25,6 +25,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _MAPTYPE_DEFAULT
   - _SYSTEMTYPE_MAP
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -86,6 +87,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: c6de52a97b52aa341818a1dd6b04ca42, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ORM:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -133,15 +138,18 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
+    - _Enable_ORM: 0
     - _EnvironmentReflections: 1
     - _FORCE_VALUE_METALIC: 0
     - _FORCE_VALUE_ROUGHNESS: 0
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _MAPTYPE: 0
     - _Map_Tiling: 1
     - _Metallic: 0.504
     - _Normal_Strenght: 1
+    - _Occlusion: 0.5
     - _OcclusionStrength: 1
     - _Oclussion: 0.5
     - _Parallax: 0.005
