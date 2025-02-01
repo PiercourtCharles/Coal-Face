@@ -4,6 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public bool IsMoving = false;
     public bool IsRunning = false;
+    public bool IsParalysed = false;
 
     [SerializeField] CharacterController _controller;
     [Tooltip("Walking speed")]
@@ -28,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (!GameManager.Instance.IsGamePause && !GameManager.Instance.Player.Stats.IsDead)
+        if (!GameManager.Instance.IsGamePause && !GameManager.Instance.Player.Stats.IsDead && !IsParalysed)
         {
             //Ground check
             _isGrounded = Physics.CheckSphere(_groundCheck.position, _groundDistance, _groundMask);

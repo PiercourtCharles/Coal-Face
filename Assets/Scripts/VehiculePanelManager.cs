@@ -25,7 +25,7 @@ public class VehiculePanelManager : MonoBehaviour
 
             if (Power.IsActive)
             {
-                StartCoroutine(GameManager.Instance.Shaker.Shake(0.1f, 0.01f));
+                //StartCoroutine(GameManager.Instance.Shaker.Shake(0.1f, 0.01f));
 
                 if (_front.IsActive)
                 {
