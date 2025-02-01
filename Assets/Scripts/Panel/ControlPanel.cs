@@ -9,5 +9,6 @@ public class ControlPanel : MonoBehaviour
     public void ChangePanelMod()
     {
         IsInControlMod = !IsInControlMod;
+        Debug.Log("Touch the panel " + IsInControlMod);
     }
 }
