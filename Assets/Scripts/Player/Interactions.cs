@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Interactions : MonoBehaviour
@@ -5,6 +6,7 @@ public class Interactions : MonoBehaviour
     [SerializeField] float _distance;
     [SerializeField] LayerMask _interactions;
     [SerializeField] GameObject _uiText;
+    [SerializeField] Transform _obj;
 
     public Hand[] Hands;
 
@@ -18,9 +20,59 @@ public class Interactions : MonoBehaviour
             Hands[0].ObjectInHand = null;
         }
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, _distance, _interactions))
+        //Origin point of ray
+        Vector3 origin = transform.position;
+
+        if (!GameManager.Instance.Player.Look.IsOnHead)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit, 1000))
+            {
+                _obj.gameObject.SetActive(true);
+                //Debug.Log(hit.point);
+                _obj.position = hit.point;
+
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    //Control Panel
+                    var panelMod = hit.transform.GetComponent<ControlPanel>();
+
+                    if (panelMod != null)
+                    {
+                        panelMod.ChangePanelMod();
+                    }
+                }
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    //Interactibles
+                    var inter = hit.transform.GetComponent<Interactible>();
+
+                    if (inter != null)
+                        inter.ChangeTarget();
+                }
+            }
+        }
+        else
+            _obj.gameObject.SetActive(false);
+        Debug.DrawLine(origin, origin + transform.TransformDirection(Vector3.forward) * _distance);
+
+        //Ray
+        if (Physics.Raycast(origin, transform.forward, out hit, _distance, _interactions) && GameManager.Instance.Player.Look.IsOnHead)
         {
             _uiText.SetActive(true);
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                //Control Panel
+                var panelMod = hit.transform.GetComponent<ControlPanel>();
+
+                if (panelMod != null)
+                {
+                    panelMod.ChangePanelMod();
+                }
+            }
 
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -45,14 +97,6 @@ public class Interactions : MonoBehaviour
 
                 if (inter != null)
                     inter.ChangeTarget();
-
-                //Control Panel
-                var panelMod = hit.transform.GetComponent<ControlPanel>();
-
-                if (panelMod != null)
-                {
-                    panelMod.ChangePanelMod();
-                }
 
                 //Objects
                 var obj = hit.transform.GetComponent<ObjectsComponents>();
@@ -100,10 +144,10 @@ public class Interactions : MonoBehaviour
         //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.blue);
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.blue;
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.blue;
 
-        Gizmos.DrawLine(transform.position, transform.position + transform.TransformDirection(Vector3.forward) * _distance);
-    }
+    //    Gizmos.DrawLine(transform.position, transform.position + transform.TransformDirection(Vector3.forward) * _distance);
+    //}
 }
