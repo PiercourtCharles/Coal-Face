@@ -20,11 +20,13 @@ public class GameManager : MonoBehaviour
     public PlayerComponentManager Player;
     public CameraShake Shaker;
     public UiManager Ui;
+    public DialogueManager Dialogue;
     [Header("")]
     public LightManager Lights;
     public RadarMining Mining;
     public ConveyorBelt Belt;
     public Furnase Furnase;
+    public Radio Radio;
     public ObjectPlacement[] Fuses;
     public VehiculePanelManager PanelControl;
     [Header("")]

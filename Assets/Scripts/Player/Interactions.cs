@@ -41,6 +41,12 @@ public class Interactions : MonoBehaviour
 
                     if (inter != null)
                         inter.ChangeTarget();
+
+                    //Radio
+                    var radio = hit.transform.GetComponent<Radio>();
+
+                    if (radio != null)
+                        radio.ChangeTarget();
                 }
             }
 

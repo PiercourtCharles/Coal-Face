@@ -8,10 +8,10 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI DialogText;
 
     [SerializeField] GameObject _canvas;
-    [SerializeField] Dialogues _actualDialogue;
+    [SerializeField] Dialogs _actualDialogue;
     [SerializeField] float _timerValue;
 
-    Dialogues _dialogue;
+    Dialogs _dialogue;
     float _timer;
 
     private void Start()
@@ -45,7 +45,7 @@ public class DialogueManager : MonoBehaviour
         if (_actualDialogue.NextDialogue != null)
         {
             _actualDialogue = _actualDialogue.NextDialogue;
-            _actualDialogue.UpdateDialogue(NameText, DialogText);
+            _actualDialogue.UpdateDialog(NameText, DialogText);
         }
         else
         {
@@ -57,13 +57,13 @@ public class DialogueManager : MonoBehaviour
     }
 
     //Activate dialog box
-    public void UpdateDialogue(Dialogues dialogue)
+    public void UpdateDialogue(Dialogs dialogue)
     {
         if (dialogue != null)
         {
             _canvas.SetActive(true);
             _actualDialogue = dialogue;
-            _actualDialogue.UpdateDialogue(NameText, DialogText);
+            _actualDialogue.UpdateDialog(NameText, DialogText);
             _timer = 0;
         }
     }

@@ -3,13 +3,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "Dialogue", menuName = "ScriptableObjects/Dialogue", order = 1)]
-public class Dialogues : ScriptableObject
+public class Dialogs : ScriptableObject
 {
     [Tooltip("Character speaking")] public Characters Character;
     [TextArea()] public string Dialogue;
-    [Tooltip("Next dialogue")] public Dialogues NextDialogue;
+    [Tooltip("Next dialogue")] public Dialogs NextDialogue;
 
-    public void UpdateDialogue(TextMeshProUGUI textComponentName, TextMeshProUGUI textComponent)
+    public void UpdateDialog(TextMeshProUGUI textComponentName, TextMeshProUGUI textComponent)
     {
         textComponentName.text = Character.Name;
         textComponent.text = Dialogue;
