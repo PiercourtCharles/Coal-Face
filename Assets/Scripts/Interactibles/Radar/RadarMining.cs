@@ -93,19 +93,19 @@ public class RadarMining : MonoBehaviour
 
             if (ressource.Type == RessourcesType.Coal)
             {
-                Debug.Log("Mine coal");
+                //Debug.Log("Mine coal");
                 GameManager.Instance.Belt.SpawnRessource(GameManager.Instance.Belt.CoalPrefab);
                 _canMineNow = false;
             }
             else if (ressource.Type == RessourcesType.Dirt)
             {
-                Debug.Log("Mine dirt");
+                //Debug.Log("Mine dirt");
                 GameManager.Instance.Belt.SpawnRessource(GameManager.Instance.Belt.DirtPrefab);
                 _canMineNow = false;
             }
             else if (ressource.Type == RessourcesType.Rock)
             {
-                Debug.Log("Mine rocks");
+                //Debug.Log("Mine rocks");
                 GameManager.Instance.Belt.SpawnRessource(GameManager.Instance.Belt.RockPrefab);
                 _canMineNow = false;
             }

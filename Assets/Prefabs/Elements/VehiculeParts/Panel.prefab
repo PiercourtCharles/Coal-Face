@@ -765,6 +765,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &4885245598829850807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8102899500505136773}
+  m_Layer: 8
+  m_Name: CamPosPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8102899500505136773
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4885245598829850807}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.33417574, y: -0, z: -0, w: 0.9425108}
+  m_LocalPosition: {x: 0, y: 4.71, z: 6.21}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 669796418757323099}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5583871475547866315
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,7 +884,8 @@ GameObject:
   - component: {fileID: 2716204047764745930}
   - component: {fileID: 5245006666182920819}
   - component: {fileID: 2617003609884382228}
-  m_Layer: 0
+  - component: {fileID: 3935230427050377173}
+  m_Layer: 7
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -950,6 +982,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3935230427050377173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5995260772066717973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06552eac3f844a946a78e758bd71b9b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CamPosPanel: {fileID: 8102899500505136773}
+  IsInControlMod: 0
 --- !u!1 &5998267260400196005
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,7 +1045,7 @@ GameObject:
   - component: {fileID: 4950098099443714082}
   - component: {fileID: 2120819213820997169}
   - component: {fileID: 8558106392129616457}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ScreenWideImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1430,7 +1476,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5378948219817300956}
   - component: {fileID: 3874942327305484781}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BoardScreenWide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1625,6 +1671,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8102899500505136773}
   - {fileID: 1182042220465932101}
   - {fileID: 6612938725616088401}
   - {fileID: 7202956984713321740}
