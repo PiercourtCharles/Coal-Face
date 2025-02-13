@@ -5280,8 +5280,8 @@
     "m_ObjectId": "0c78348925054908bb26d1aefeb150aa",
     "m_Title": "If we have any value in the Vertex Stream, use that, otherwise equal 1",
     "m_Position": {
-        "x": -6099.99951171875,
-        "y": 982.0000610351563
+        "x": -6100.0,
+        "y": 982.0
     }
 }
 
@@ -5532,7 +5532,7 @@
     "m_ObjectId": "100c43995242421ab9c6c103988bf605",
     "m_Title": "Disable normal Soft Particles if we want it to apply to cutout",
     "m_Position": {
-        "x": -7600.99951171875,
+        "x": -7601.0,
         "y": 4427.0
     }
 }
@@ -6218,7 +6218,7 @@
     "m_ObjectId": "1633f77f6e524a02a53947b9a811606b",
     "m_Title": "Adding Distortion Or not",
     "m_Position": {
-        "x": -7437.99951171875,
+        "x": -7438.0,
         "y": -286.0
     }
 }
@@ -6765,7 +6765,7 @@
     "m_ObjectId": "1bf4ad8d39764238a1487da76965c3d0",
     "m_Title": "Mask Texture",
     "m_Position": {
-        "x": -2826.99951171875,
+        "x": -2827.0,
         "y": 4530.0
     }
 }
@@ -8503,7 +8503,7 @@
     "m_ObjectId": "3064007d47c542af810fb88ff88a00dc",
     "m_Title": "Determine if Distortion affects the Cutout",
     "m_Position": {
-        "x": -8498.9990234375,
+        "x": -8499.0,
         "y": 2019.0
     }
 }
@@ -8628,7 +8628,7 @@
     "m_ObjectId": "32f305e8b8e0449f8b4daa722a347249",
     "m_Title": "Actual Cutout Logic",
     "m_Position": {
-        "x": -3558.99951171875,
+        "x": -3559.0,
         "y": 1544.0
     }
 }
@@ -9187,7 +9187,7 @@
     "m_ObjectId": "376c099e36e94b70a7431cf28a6ac1a0",
     "m_Title": "Distortion offset Custom Vertex Streams",
     "m_Position": {
-        "x": -11160.9990234375,
+        "x": -11161.0,
         "y": 2319.0
     }
 }
@@ -10552,8 +10552,8 @@
     "m_ObjectId": "43ea9fa176f942988564ff462d7880cc",
     "m_Title": "Main Texture Custom Vertex Streams offset",
     "m_Position": {
-        "x": -9111.9990234375,
-        "y": -121.99958801269531
+        "x": -9112.0,
+        "y": -122.0
     }
 }
 
@@ -11195,7 +11195,7 @@
     "m_ObjectId": "4ad1b39a13874ea581b49b46319a583f",
     "m_Title": "Apply Soft Particles to Cutout",
     "m_Position": {
-        "x": -6376.99951171875,
+        "x": -6377.0,
         "y": 3127.0
     }
 }
@@ -11908,7 +11908,7 @@
     "m_Title": "Actual Determination of Step/Smoothstep and Possible Optimization",
     "m_Position": {
         "x": -1802.0,
-        "y": 2243.000244140625
+        "y": 2243.0
     }
 }
 
@@ -12422,7 +12422,7 @@
     "m_ObjectId": "5a1e1a6b669046a395a938e192ff872f",
     "m_Title": "Cutout Texture Tiling and Offset",
     "m_Position": {
-        "x": -9060.9990234375,
+        "x": -9061.0,
         "y": 2599.0
     }
 }
@@ -12639,8 +12639,8 @@
     "m_ObjectId": "5b40973cb29047fd806813170e8f2734",
     "m_Title": "Saturate makes sure all values are between 0 and 1",
     "m_Position": {
-        "x": 753.0009765625,
-        "y": 517.000244140625
+        "x": 753.0,
+        "y": 517.0
     }
 }
 
@@ -13712,7 +13712,7 @@
     "m_ObjectId": "668bf65d65324019b64aad1488bedf1b",
     "m_Title": "Main Texture Tiling and Offset Stuff",
     "m_Position": {
-        "x": -9590.9990234375,
+        "x": -9591.0,
         "y": -955.0
     }
 }
@@ -14376,7 +14376,7 @@
     "m_ObjectId": "6d80657f9c2f42c2ae63bb0ce4281dd1",
     "m_Title": "Combine all sources of Cutout together",
     "m_Position": {
-        "x": -5662.99951171875,
+        "x": -5663.0,
         "y": 2586.0
     }
 }
@@ -14819,8 +14819,8 @@
     "m_ObjectId": "724bf32d3d994028b2e25375d4abe816",
     "m_Title": "Grayscale Alpha",
     "m_Position": {
-        "x": -1912.99951171875,
-        "y": 1034.0001220703125
+        "x": -1913.0,
+        "y": 1034.0
     }
 }
 
@@ -15034,7 +15034,7 @@
     "m_ObjectId": "76148303f6c8466fb00a965630547757",
     "m_Title": "Edge Glow",
     "m_Position": {
-        "x": -4159.99951171875,
+        "x": -4160.0,
         "y": 2620.0
     }
 }
@@ -15997,8 +15997,8 @@
     "m_ObjectId": "85cceef777cf4beab832097a108133f3",
     "m_Title": "Keyword Determines what Controls the Cutout",
     "m_Position": {
-        "x": -6298.99951171875,
-        "y": 2036.0001220703125
+        "x": -6299.0,
+        "y": 2036.0
     }
 }
 
@@ -16786,7 +16786,7 @@
     "m_ObjectId": "8f2828d4dc004ec3833ce2e266739d06",
     "m_Title": "Apply Fresnel Fade to Cutout",
     "m_Position": {
-        "x": -5886.99951171875,
+        "x": -5887.0,
         "y": 3234.0
     }
 }
@@ -17838,7 +17838,7 @@
     "m_ObjectId": "9ca2ab808b2e42c195e706c5b2437724",
     "m_Title": "Soft Particles",
     "m_Position": {
-        "x": -8361.9990234375,
+        "x": -8362.0,
         "y": 4402.0
     }
 }
@@ -17900,8 +17900,8 @@
     "m_ObjectId": "9e0c44de9b704036a05ba2ecdabea36f",
     "m_Title": "Cutout Main Texture",
     "m_Position": {
-        "x": -7556.99951171875,
-        "y": 2354.999755859375
+        "x": -7557.0,
+        "y": 2355.0
     }
 }
 
@@ -21045,7 +21045,7 @@
     "m_Title": "Disable cutout edge if its not ticked",
     "m_Position": {
         "x": -2139.0,
-        "y": -16.999584197998048
+        "y": -17.0
     }
 }
 
@@ -21823,8 +21823,8 @@
     "m_ObjectId": "c571eacc22d6471a914ffab732c06e3b",
     "m_Title": "Culling",
     "m_Position": {
-        "x": -662.9991455078125,
-        "y": 19.00048828125
+        "x": -663.0,
+        "y": 19.0
     }
 }
 
@@ -23133,8 +23133,8 @@
     "m_ObjectId": "d1b7b493151e4a7e82f54d8dda299273",
     "m_Title": "Cutout Edge Smoothness",
     "m_Position": {
-        "x": -5657.99951171875,
-        "y": 1499.0001220703125
+        "x": -5658.0,
+        "y": 1499.0
     }
 }
 
@@ -23382,7 +23382,7 @@
     "m_ObjectId": "d41cff1a2f504db68f3b48bd6a1ea615",
     "m_Title": "Fresnel Fade",
     "m_Position": {
-        "x": -6574.99951171875,
+        "x": -6575.0,
         "y": 3878.0
     }
 }
@@ -23652,8 +23652,8 @@
     "m_ObjectId": "d7d717ae3f3d45949cdca8f6bbb51ab9",
     "m_Title": "Color",
     "m_Position": {
-        "x": -4097.99951171875,
-        "y": -1614.99951171875
+        "x": -4098.0,
+        "y": -1615.0
     }
 }
 
@@ -24213,7 +24213,7 @@
     "m_ObjectId": "dc5d7ead437c44bfa0054156a7c8b49e",
     "m_Title": "Disable Normal Fresnel Fade if we want it to apply to cutout",
     "m_Position": {
-        "x": -5750.99951171875,
+        "x": -5751.0,
         "y": 3813.0
     }
 }
@@ -25260,8 +25260,8 @@
     "m_ObjectId": "e75f56af58e246a8ab361fce5fd90439",
     "m_Title": "Main Texture",
     "m_Position": {
-        "x": -8150.99951171875,
-        "y": -482.99957275390627
+        "x": -8151.0,
+        "y": -483.0
     }
 }
 
@@ -25429,8 +25429,8 @@
     "m_ObjectId": "e9bec86479024b348367c90e75db4483",
     "m_Title": "Distortion",
     "m_Position": {
-        "x": -11650.9990234375,
-        "y": 1513.0001220703125
+        "x": -11651.0,
+        "y": 1513.0
     }
 }
 
@@ -25881,8 +25881,8 @@
     "m_ObjectId": "ed81802ca23d4507af7d65f70706f281",
     "m_Title": "Main Texture Rotation Stuff",
     "m_Position": {
-        "x": -9539.9990234375,
-        "y": 247.00048828125
+        "x": -9540.0,
+        "y": 247.0
     }
 }
 
@@ -26084,7 +26084,7 @@
     "m_ObjectId": "f0423e13e7ef4ea08a8aa91254b1f0e4",
     "m_Title": "Distortion Power",
     "m_Position": {
-        "x": -10546.9990234375,
+        "x": -10547.0,
         "y": 1083.0
     }
 }
@@ -26095,8 +26095,8 @@
     "m_ObjectId": "f0ee0f59a89d4b499310a7ff252495a5",
     "m_Title": "Combining All Alphas",
     "m_Position": {
-        "x": -818.9991455078125,
-        "y": 710.000244140625
+        "x": -819.0,
+        "y": 710.0
     }
 }
 
@@ -26967,7 +26967,7 @@
     "m_ObjectId": "fe240f24c5544abd8dc5d13f97242581",
     "m_Title": "Vertex Colors Apply to Cutout",
     "m_Position": {
-        "x": -6852.99951171875,
+        "x": -6853.0,
         "y": 2496.0
     }
 }

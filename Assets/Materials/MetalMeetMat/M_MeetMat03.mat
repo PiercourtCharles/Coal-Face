@@ -26,8 +26,10 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _MAPTYPE_DEFAULT
-  - _SYSTEMTYPE_MAP
-  m_InvalidKeywords: []
+  - _SYSTEMTYPE_GLOBAL
+  m_InvalidKeywords:
+  - _FORCE_VALUE_METALIC_MAPTYPE_DEFAULT
+  - _MAPTYPE_SYSTEMTYPE_MAP_DEFAULT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -83,6 +85,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: db9ae3667aa86d54ba2c6d613c395bde, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Metallic_Map_MAPTYPE_DEFAULT:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Normal_Map:
         m_Texture: {fileID: 2800000, guid: a8e0928270578f047863cad8716d3139, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -91,11 +97,23 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ORM_MAPTYPE:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ORM_MAPTYPE_ORM:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Occlusion_Map:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Occlusion_Map_MAPTYPE_DEFAULT:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -129,6 +147,7 @@ Material:
     - _AlphaToMask: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
+    - _Blend_SYSTEMTYPE_TRIPLANAR: 1
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -141,16 +160,22 @@ Material:
     - _Enable_ORM: 0
     - _EnvironmentReflections: 1
     - _FORCE_VALUE_METALIC: 0
+    - _FORCE_VALUE_METALIC_MAPTYPE_DEFAULT: 1
     - _FORCE_VALUE_ROUGHNESS: 0
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _MAPTYPE: 0
+    - _MAPTYPE_SYSTEMTYPE_MAP: 0
     - _Map_Tiling: 1
+    - _Map_Tiling_MAPTYPE_MAP: 1
+    - _Map_Tiling_SYSTEMTYPE_MAP: 1
     - _Metallic: 0.504
+    - _Metallic_MAPTYPE_DEFAULT: 0
     - _Normal_Strenght: 1
     - _Occlusion: 0.5
     - _OcclusionStrength: 1
+    - _Occlusion_MAPTYPE_DEFAULT: 0.5
     - _Oclussion: 0.5
     - _Parallax: 0.005
     - _QueueControl: 0
@@ -158,7 +183,7 @@ Material:
     - _ReceiveShadows: 1
     - _Roughness: 0.451
     - _Roughthness_Intensity: 0.69
-    - _SYSTEMTYPE: 0
+    - _SYSTEMTYPE: 2
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -166,6 +191,8 @@ Material:
     - _SrcBlendAlpha: 1
     - _Surface: 0
     - _TriplanarTiling: 1
+    - _TriplanarTiling_SYSTEMTYPE_TILLING: 1
+    - _TriplanarTiling_SYSTEMTYPE_TRIPLANAR: 1
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
