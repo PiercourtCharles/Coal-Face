@@ -6,30 +6,37 @@ public class PlayerMovement : MonoBehaviour
     public bool IsRunning = false;
     public bool IsParalysed = false;
 
+    [Header("Froces :")]
     [SerializeField] CharacterController _controller;
+
     [Tooltip("Walking speed")]
     [SerializeField] float _speed = 12f;
+
     [Tooltip("Running speed")]
     [SerializeField] float _runSpeed = 3f;
+
     [Tooltip("Gravity / fall speed")]
     [SerializeField] float _gravity = -15; //-9.81f;
+
     [Tooltip("Jump force")]
     [SerializeField] float _jumpForce = 3f;
+
     [Header("Ground :")]
     [Tooltip("Radius check")]
     [SerializeField] float _groundDistance = 0.4f;
+
     [Tooltip("Position to check if grounded")]
     [SerializeField] Transform _groundCheck;
+
     [Tooltip("Layer of ground checking")]
     [SerializeField] LayerMask _groundMask;
 
     Vector3 _velocity;
-    Vector3 _directionSpeed;
     bool _isGrounded;
 
     void Update()
     {
-        if (!GameManager.Instance.IsGamePause && !GameManager.Instance.Player.Stats.IsDead && !IsParalysed)
+        if (/*!GameManager.Instance.IsGamePause && */!PlayerComponentManager.Instance.Stats.IsDead && !IsParalysed)
         {
             //Ground check
             _isGrounded = Physics.CheckSphere(_groundCheck.position, _groundDistance, _groundMask);

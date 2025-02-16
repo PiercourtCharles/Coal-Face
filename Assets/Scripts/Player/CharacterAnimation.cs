@@ -23,25 +23,25 @@ public class CharacterAnimation : MonoBehaviour
     {
         if (!GameManager.Instance.IsGamePause)
         {
-        if (_timer >= 0)
-            _timer -= Time.deltaTime;
-        else
-        {
-            Check();
-            _timer = _speed;
-        }
-
-        if (_playerMove.IsMoving)
-        {
-            if (_playerMove.IsRunning)
-                _speed = _valueSpeed / 2;
+            if (_timer >= 0)
+                _timer -= Time.deltaTime;
             else
-                _speed = _valueSpeed;
+            {
+                Check();
+                _timer = _speed;
+            }
 
-            _headTransform.localPosition = Vector3.Lerp(_headTransform.localPosition, _headTarget, _valueLerp);
-        }
-        else
-            _headTransform.localPosition = Vector3.Lerp(_headTransform.localPosition, _headDown, 0.01f);
+            if (_playerMove.IsMoving)
+            {
+                if (_playerMove.IsRunning)
+                    _speed = _valueSpeed / 2;
+                else
+                    _speed = _valueSpeed;
+
+                _headTransform.localPosition = Vector3.Lerp(_headTransform.localPosition, _headTarget, _valueLerp);
+            }
+            else
+                _headTransform.localPosition = Vector3.Lerp(_headTransform.localPosition, _headDown, 0.01f);
         }
     }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ControlPanel : MonoBehaviour
 {
+    public PanelInteraction PanelInt = new PanelInteraction();
     public Transform CamPosPanel;
     public bool IsInControlMod = false;
     
@@ -11,18 +12,19 @@ public class ControlPanel : MonoBehaviour
     {
         IsInControlMod = !IsInControlMod;
         Debug.Log("Touch the panel " + IsInControlMod);
+        var player = PlayerComponentManager.Instance;
 
         if (IsInControlMod)
         {
-            GameManager.Instance.Player.Movement.IsParalysed = true;
-            GameManager.Instance.Player.Look.IsOnHead = false;
-            GameManager.Instance.Player.Look.CamTargetPos = CamPosPanel;
+            player.Movement.IsParalysed = true;
+            player.Look.IsOnHead = false;
+            player.Look.CamTargetPos = CamPosPanel;
         }
         else
         {
-            GameManager.Instance.Player.Movement.IsParalysed = false;
-            GameManager.Instance.Player.Look.IsOnHead = true;
-            GameManager.Instance.Player.Look.CamTargetPos = null;
+            player.Movement.IsParalysed = false;
+            player.Look.IsOnHead = true;
+            player.Look.CamTargetPos = null;
         }
     }
 }

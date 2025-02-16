@@ -4,11 +4,14 @@ public class MouseLook : MonoBehaviour
 {
     [Header("Values :")]
     public Transform CamTargetPos;
+
     [Range(0, 200)]
     public float MouseSensitivity = 100f;
+
     [Range(0f, 0.5f)]
     [Tooltip("When changing pos")]
     public float CamSpeedSensitivity = 0.1f;
+
     public bool IsOnHead = true;
 
     [SerializeField] Transform _playerBody;
@@ -24,7 +27,7 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-        if (!GameManager.Instance.IsGamePause && !GameManager.Instance.Player.Stats.IsDead)
+        if (/*!GameManager.Instance.IsGamePause && */!PlayerComponentManager.Instance.Stats.IsDead)
         {
             if (IsOnHead)
             {

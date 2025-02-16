@@ -1,30 +1,35 @@
-using Unity.Mathematics;
 using UnityEngine;
 
 public class Interactions : MonoBehaviour
 {
+    [Header("Parameters :")]
     [SerializeField] float _distance;
     [SerializeField] LayerMask _interactions;
     [SerializeField] GameObject _uiText;
     [SerializeField] Transform _obj;
 
-    public Hand[] Hands;
+    [Header("Inputs :")]
+    [SerializeField] KeyCode _interact;
+    [SerializeField] KeyCode _eject;
+
+    [Header("Hands :")]
+    public Hands Hands;
 
     private void Update()
     {
         RaycastHit hit;
 
-        if (Input.GetKeyDown(KeyCode.Q) && Hands[0].ObjectInHand != null)
+        if (Input.GetKeyDown(_eject) && Hands.GetObjectInHand(0) != null)
         {
-            Hands[0].ObjectInHand.GetComponent<ObjectsComponents>().Grab(null);
-            Hands[0].ObjectInHand = null;
+            Hands.GetObjectInHand(0).GetComponent<ObjectsComponents>().Grab(null);
+            Hands.LoseObjectInHand(0);
         }
 
         //Origin point of ray
         Vector3 origin = transform.position;
         Debug.DrawLine(origin, origin + transform.TransformDirection(Vector3.forward) * _distance);
 
-        if (!GameManager.Instance.Player.Look.IsOnHead)
+        if (!PlayerComponentManager.Instance.Look.IsOnHead)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -34,7 +39,7 @@ public class Interactions : MonoBehaviour
                 //Debug.Log(hit.point);
                 _obj.position = hit.point;
 
-                if (Input.GetKeyDown(KeyCode.Mouse0))
+                if (Input.GetKeyDown(_interact))
                 {
                     //Interactibles
                     var inter = hit.transform.GetComponent<Interactible>();
@@ -49,17 +54,6 @@ public class Interactions : MonoBehaviour
                         radio.ChangeTarget();
                 }
             }
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                //Control Panel
-                var panelMod = hit.transform.GetComponent<ControlPanel>();
-
-                if (panelMod != null)
-                {
-                    panelMod.ChangePanelMod();
-                }
-            }
         }
         else
         {
@@ -68,76 +62,42 @@ public class Interactions : MonoBehaviour
             //Ray
             if (Physics.Raycast(origin, transform.forward, out hit, _distance, _interactions) && GameManager.Instance.Player.Look.IsOnHead)
             {
-                _uiText.SetActive(true);
+                if (_uiText != null)
+                    _uiText.SetActive(true);
 
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(_interact))
                 {
-                    //Control Panel
-                    var panelMod = hit.transform.GetComponent<ControlPanel>();
-
-                    if (panelMod != null)
-                    {
-                        panelMod.ChangePanelMod();
-                    }
-
                     //Doors
                     var door = hit.transform.GetComponent<Doors>();
-
                     if (door != null)
-                    {
-                        //var objComp = Hands[0].ObjectInHand.GetComponent<ObjectsComponents>();
-
-                        //if (objComp != null && door.IsLocked)
-                        //    door.IsLocked = !objComp.Use();
-
-                        if (!door.IsLocked)
-                            door.ChangeTarget();
-                        else
-                            Debug.Log("Door close");
-                    }
+                        door.DoorInt.OnAction(door, Hands);
 
                     //Objects
                     var obj = hit.transform.GetComponent<ObjectsComponents>();
-
-                    if (obj != null && Hands[0].ObjectInHand == null)
-                    {
-                        obj.Grab(Hands[0].HandTransform);
-                        Hands[0].ObjectInHand = obj.gameObject;
-                    }
+                    if (obj != null)
+                        obj.ObjInt.OnAction(obj, Hands);
 
                     //Objects placement
-                    var placement = hit.transform.GetComponent<ObjectPlacement>();
-
-                    if (placement != null && Hands[0].ObjectInHand != null)
-                    {
-                        var objComp = Hands[0].ObjectInHand.GetComponent<ObjectsComponents>();
-
-                        if (!placement.IsReplace && objComp.ObjectInfos.Type == ObjectInfos.ObjectType.Change && objComp.ObjectInfos.SubType == placement.SubType)
-                        {
-                            placement.IsReplace = objComp.Use();
-                            Destroy(Hands[0].ObjectInHand);
-                            Hands[0].ObjectInHand = null;
-
-                            placement.Repair();
-                        }
-                        else
-                            Debug.Log("Not the right one or not brake yet");
-                    }
+                    var place = hit.transform.GetComponent<ObjectPlacement>();
+                    if (place != null)
+                        place.PlacementInt.OnAction(place, Hands);
 
                     //Furnase
                     var furnase = hit.transform.GetComponent<Furnase>();
+                    if (furnase != null)
+                        furnase.FurnaseInt.OnAction(furnase, Hands);
 
-                    if (furnase != null && Hands[0].ObjectInHand != null)
-                    {
-                        furnase.Repair(Hands[0].ObjectInHand.GetComponent<Fuel>());
-
-                        Destroy(Hands[0].ObjectInHand);
-                        Hands[0].ObjectInHand = null;
-                    }
+                    //Furnase
+                    var panel = hit.transform.GetComponent<ControlPanel>();
+                    if (panel != null)
+                        panel.PanelInt.OnAction(panel, Hands);
                 }
             }
             else
-                _uiText.SetActive(false);
+            {
+                if (_uiText != null)
+                    _uiText.SetActive(false);
+            }
         }
 
         //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.blue);
@@ -149,4 +109,9 @@ public class Interactions : MonoBehaviour
 
     //    Gizmos.DrawLine(transform.position, transform.position + transform.TransformDirection(Vector3.forward) * _distance);
     //}
+}
+
+public interface IInteraction
+{
+    public void OnAction(MonoBehaviour script, Hands hands);
 }

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public float Air = 3;
-    public float Life = 0;
-    public bool IsDead = false;
-
     [SerializeField] float LifeMax = 10;
+
+    public float Life = 0;
+    public float Air = 3;
+    public bool IsDead = false;
 
     private void Start()
     {

@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public PlayerComponentManager Player;
-    public CameraShake Shaker;
     public UiManager Ui;
     public DialogueManager Dialogue;
     [Header("")]
