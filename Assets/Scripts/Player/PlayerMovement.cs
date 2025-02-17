@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -47,8 +48,8 @@ public class PlayerMovement : MonoBehaviour
             }
 
             //Move
-            float x = Input.GetAxis("Horizontal");
-            float z = Input.GetAxis("Vertical");
+            float x = PlayerComponentManager.Instance.PlayerInputs.Player.Move.ReadValue<Vector2>().x;
+            float z = PlayerComponentManager.Instance.PlayerInputs.Player.Move.ReadValue<Vector2>().y;
 
             Vector3 move = transform.right * x + transform.forward * z;
 
@@ -58,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
                 IsMoving = false;
 
             //Run
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (PlayerComponentManager.Instance.PlayerInputs.Player.Run.ReadValue<float>() != 0)
             {
                 _controller.Move(move * (_speed + _runSpeed) * Time.deltaTime);
                 IsRunning = true;
@@ -70,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             //Jump
-            if (Input.GetButtonDown("Jump") && _isGrounded)
+            if (PlayerComponentManager.Instance.PlayerInputs.Player.Jump.ReadValue<float>() != 0 && _isGrounded)
             {
                 _velocity.y = Mathf.Sqrt(_jumpForce * -2f * _gravity);
             }

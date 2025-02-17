@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ObjectPlacement : MonoBehaviour
 {
-    public FurnaseInteraction PlacementInt = new FurnaseInteraction();
+    public PlacementInteraction PlacementInt = new PlacementInteraction();
     public ObjectInfos.ObjectSubType SubType; 
     public bool IsReplace = true;
     public bool IsBreak = false;

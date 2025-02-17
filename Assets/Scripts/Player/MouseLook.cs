@@ -31,8 +31,8 @@ public class MouseLook : MonoBehaviour
         {
             if (IsOnHead)
             {
-                float mouseX = Input.GetAxis("Mouse X") * MouseSensitivity * Time.deltaTime;
-                float mouseY = Input.GetAxis("Mouse Y") * MouseSensitivity * Time.deltaTime;
+                float mouseX = PlayerComponentManager.Instance.PlayerInputs.Player.Look.ReadValue<Vector2>().x * MouseSensitivity / 10 * Time.deltaTime;
+                float mouseY = PlayerComponentManager.Instance.PlayerInputs.Player.Look.ReadValue<Vector2>().y * MouseSensitivity / 10 * Time.deltaTime;
 
                 _xRotation -= mouseY;
                 _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
