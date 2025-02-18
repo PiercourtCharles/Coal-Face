@@ -25,7 +25,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _MAPTYPE_DEFAULT
+  - _MAPTYPE_ORM
   - _SYSTEMTYPE_MAP
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -59,8 +59,24 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _DetailNormal:
+        m_Texture: {fileID: 2800000, guid: c6de52a97b52aa341818a1dd6b04ca42, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormal_USEDETAILNORMAL:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormal_USE_DETAILNORMAL:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormal_UseDetailNormal:
+        m_Texture: {fileID: 2800000, guid: f50c4db4fc5ca3d4398a0097ca4bd7e9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -96,7 +112,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ORM:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d8f802f2d21a660448f96411beb5d072, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -112,6 +128,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Roughness_Map:
+        m_Texture: {fileID: 2800000, guid: 10c716b99df1ff740ad576ce5e334a74, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Roughness_Map_MAPTYPE_DEFAULT:
+        m_Texture: {fileID: 2800000, guid: 10c716b99df1ff740ad576ce5e334a74, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_e6b1e5620d354617ac764b8f42436039_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: 10c716b99df1ff740ad576ce5e334a74, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -145,16 +169,23 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _DetailNormal_Strenght: 5
+    - _DetailNormal_Strenght_USEDETAILNORMAL: 0
+    - _DetailNormal_Strenght_USE_DETAILNORMAL: 0
+    - _DetailNormal_Strenght_UseDetailNormal: 1.71
+    - _DetailNormal_Tiling: 2
+    - _DetailNormal_Tiling_UseDetailNormal: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _Enable_ORM: 0
     - _EnvironmentReflections: 1
     - _FORCE_VALUE_METALIC: 0
     - _FORCE_VALUE_ROUGHNESS: 0
+    - _FORCE_VALUE_ROUGHNESS_MAPTYPE_DEFAULT: 0
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _MAPTYPE: 0
+    - _MAPTYPE: 1
     - _Map_Tiling: 1
     - _Map_Tiling_SYSTEMTYPE_MAP: 1
     - _Metallic: 0.504
@@ -166,18 +197,22 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Roughness: 0.451
+    - _Roughness: 0.604
     - _Roughthness_Intensity: 0.62
     - _SYSTEMTYPE: 0
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpawDistance: 2
+    - _SpawDistance_USEDETAILNORMAL: 0
+    - _SpawDistance_UseDetailNormal: 2.17
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
     - _TriplanarTiling: 1
     - _TriplanarTiling_SYSTEMTYPE_TRIPLANAR: 1
+    - _UseDetailNormal: 0
+    - _Use_DetailNormal: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
