@@ -41,6 +41,7 @@ public class Interactions : MonoBehaviour
                     var inter = hit.transform.GetComponent<Interactible>();
                     var radio = hit.transform.GetComponent<Radio>();
                     var panel = hit.transform.GetComponent<ControlPanel>();
+                    var bed = hit.transform.GetComponent<Bed>();
 
                     if (inter != null)
                         inter.ChangeTarget();
@@ -48,6 +49,8 @@ public class Interactions : MonoBehaviour
                         radio.ChangeTarget();
                     else if (panel != null)
                         panel.PanelInt.OnAction(panel, Hands);
+                    else if (bed != null)
+                        bed.PanelInt.OnAction(bed, Hands);
                 }
             }
 
@@ -72,6 +75,7 @@ public class Interactions : MonoBehaviour
                     var place = hit.transform.GetComponent<ObjectPlacement>();
                     var furnase = hit.transform.GetComponent<Furnase>();
                     var panel = hit.transform.GetComponent<ControlPanel>();
+                    var bed = hit.transform.GetComponent<Bed>();
 
                     if (door != null)
                         door.DoorInt.OnAction(door, Hands);
@@ -83,6 +87,8 @@ public class Interactions : MonoBehaviour
                         furnase.FurnaseInt.OnAction(furnase, Hands);
                     else if (panel != null)
                         panel.PanelInt.OnAction(panel, Hands);
+                    else if (bed != null)
+                        bed.PanelInt.OnAction(bed, Hands);
                 }
             }
             else

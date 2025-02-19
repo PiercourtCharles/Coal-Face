@@ -4,7 +4,9 @@ using UnityEngine;
 public class Crank : MonoBehaviour
 {
     [SerializeField] Transform _parent;
-    [Range(0f, 1f)][SerializeField] float _rigidity = 0.5f;
+    [Range(0f, 1f)] [SerializeField] float _rigidity = 0.5f;
+    [Tooltip("Minimum and maximum angle")][SerializeField] Vector2 _angleLimit;
+    [SerializeField] bool _isLockAngles = false;
 
     private void OnMouseDrag()
     {
@@ -15,7 +17,13 @@ public class Crank : MonoBehaviour
             Vector3 difference = hit.point - _parent.position;
             Quaternion rotation = Quaternion.LookRotation(difference, Vector3.down);
             rotation = Quaternion.Lerp(_parent.localRotation, rotation, _rigidity);
-            _parent.localRotation = new Quaternion(_parent.localRotation.x, rotation.y, _parent.localRotation.z, rotation.w);
+            Quaternion newRot = new Quaternion(_parent.localRotation.x, rotation.y, _parent.localRotation.z, rotation.w);
+
+            if (_isLockAngles && (newRot.eulerAngles.y < _angleLimit.x || newRot.eulerAngles.y > _angleLimit.y))
+            {
+            }
+            else
+                _parent.localRotation = new Quaternion(_parent.localRotation.x, rotation.y, _parent.localRotation.z, rotation.w);
         }
     }
 }
