@@ -1,29 +1,47 @@
+using System;
 using System.Linq;
 using UnityEngine;
 
 public class Crank : MonoBehaviour
 {
-    [SerializeField] Transform _parent;
-    [Range(0f, 1f)] [SerializeField] float _rigidity = 0.5f;
-    [Tooltip("Minimum and maximum angle")][SerializeField] Vector2 _angleLimit;
+    [SerializeField] Transform _parentRotation;
+    [Range(0f, 100f)] [SerializeField] float _rigidity = 0.5f;
+    [Tooltip("Minimum and maximum angle")] [SerializeField] Vector2 _angleLimit;
     [SerializeField] bool _isLockAngles = false;
+    Vector3? _centerParentScreenPos = null;
+    Quaternion _initialRotOffset;
+
+    private void Start()
+    {
+        _initialRotOffset = _parentRotation.rotation;
+    }
+
+    private void OnMouseDown()
+    {
+        _centerParentScreenPos = Camera.main.WorldToScreenPoint(_parentRotation.position);
+    }
 
     private void OnMouseDrag()
     {
-        RaycastHit hit;
-
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 1000))
+        if (_centerParentScreenPos != null)
         {
-            Vector3 difference = hit.point - _parent.position;
-            Quaternion rotation = Quaternion.LookRotation(difference, Vector3.down);
-            rotation = Quaternion.Lerp(_parent.localRotation, rotation, _rigidity);
-            Quaternion newRot = new Quaternion(_parent.localRotation.x, rotation.y, _parent.localRotation.z, rotation.w);
+            Vector3 centerCam = (Vector3)_centerParentScreenPos;
+            var angle = (float)-Math.Atan2(centerCam.y - Input.mousePosition.y, centerCam.x - Input.mousePosition.x) * Mathf.Rad2Deg;    // gets angle between 2 points as degrees
 
-            if (_isLockAngles && (newRot.eulerAngles.y < _angleLimit.x || newRot.eulerAngles.y > _angleLimit.y))
+            if (_isLockAngles && (angle < _angleLimit.x || angle > _angleLimit.y))
             {
+                return;
             }
             else
-                _parent.localRotation = new Quaternion(_parent.localRotation.x, rotation.y, _parent.localRotation.z, rotation.w);
+            {
+                _parentRotation.rotation = Quaternion.Euler(_parentRotation.rotation.x, angle, _parentRotation.rotation.z);
+                _parentRotation.localRotation = new Quaternion(0, _parentRotation.localRotation.y, 0, _parentRotation.localRotation.w);
+            }
         }
+    }
+
+    private void OnMouseUp()
+    {
+        _centerParentScreenPos = null;
     }
 }
