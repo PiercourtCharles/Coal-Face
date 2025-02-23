@@ -327,7 +327,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a58485d193736aa4a95c085382718cf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _parentRotation: {fileID: 0}
-  _rigidity: 0.1
+  Angle: 0
+  _parentRotation: {fileID: 8136788406977304085}
+  _rigidity: 1
   _angleLimit: {x: 0, y: 180}
   _isLockAngles: 0

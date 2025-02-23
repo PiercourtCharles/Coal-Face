@@ -20,6 +20,9 @@ public class Hands : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.IsGamePause || PlayerComponentManager.Instance.Stats.IsDead)
+            return;
+
         for (int i = 0; i < _hands.Length; i++)
         {
             //_hands[i].ArmMeshTransform.position = Vector3.Lerp(_hands[i].ArmMeshTransform.position, transform.position, _lerpDelay);

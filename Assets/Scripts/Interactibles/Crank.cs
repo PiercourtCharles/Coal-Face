@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class Crank : MonoBehaviour
 {
+    public float Angle = 0;
+
     [SerializeField] Transform _parentRotation;
-    [Range(0f, 100f)] [SerializeField] float _rigidity = 0.5f;
+    [Tooltip("Not used now")] [Range(0f, 100f)] [SerializeField] float _rigidity = 0.5f;
     [Tooltip("Minimum and maximum angle")] [SerializeField] Vector2 _angleLimit;
     [SerializeField] bool _isLockAngles = false;
     Vector3? _centerParentScreenPos = null;
-    Quaternion _initialRotOffset;
 
     private void Start()
     {
-        _initialRotOffset = _parentRotation.rotation;
+        ChangeAngle(Angle);
     }
 
     private void OnMouseDown()
@@ -26,16 +27,13 @@ public class Crank : MonoBehaviour
         if (_centerParentScreenPos != null)
         {
             Vector3 centerCam = (Vector3)_centerParentScreenPos;
-            var angle = (float)-Math.Atan2(centerCam.y - Input.mousePosition.y, centerCam.x - Input.mousePosition.x) * Mathf.Rad2Deg;    // gets angle between 2 points as degrees
+            Angle = (float)-Math.Atan2(centerCam.y - Input.mousePosition.y, centerCam.x - Input.mousePosition.x) * Mathf.Rad2Deg;    // gets angle between 2 points as degrees
 
-            if (_isLockAngles && (angle < _angleLimit.x || angle > _angleLimit.y))
-            {
+            if (_isLockAngles && (Angle < _angleLimit.x || Angle > _angleLimit.y))
                 return;
-            }
             else
             {
-                _parentRotation.rotation = Quaternion.Euler(_parentRotation.rotation.x, angle, _parentRotation.rotation.z);
-                _parentRotation.localRotation = new Quaternion(0, _parentRotation.localRotation.y, 0, _parentRotation.localRotation.w);
+                ChangeAngle(Angle);
             }
         }
     }
@@ -43,5 +41,11 @@ public class Crank : MonoBehaviour
     private void OnMouseUp()
     {
         _centerParentScreenPos = null;
+    }
+
+    void ChangeAngle(float angle)
+    {
+        _parentRotation.rotation = Quaternion.Euler(_parentRotation.rotation.x, angle, _parentRotation.rotation.z);
+        _parentRotation.localRotation = new Quaternion(0, _parentRotation.localRotation.y, 0, _parentRotation.localRotation.w);
     }
 }

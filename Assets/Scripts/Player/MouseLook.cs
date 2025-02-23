@@ -27,28 +27,38 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-        if (/*!GameManager.Instance.IsGamePause && */!PlayerComponentManager.Instance.Stats.IsDead)
+        if (GameManager.Instance.IsGamePause || PlayerComponentManager.Instance.Stats.IsDead)
+            return;
+
+        if (IsOnHead)
         {
-            if (IsOnHead)
-            {
-                float mouseX = PlayerComponentManager.Instance.PlayerInputs.Player.Look.ReadValue<Vector2>().x * MouseSensitivity / 10 * Time.deltaTime;
-                float mouseY = PlayerComponentManager.Instance.PlayerInputs.Player.Look.ReadValue<Vector2>().y * MouseSensitivity / 10 * Time.deltaTime;
+            float mouseX = PlayerComponentManager.Instance.PlayerInputs.Player.Look.ReadValue<Vector2>().x * MouseSensitivity / 10 * Time.deltaTime;
+            float mouseY = PlayerComponentManager.Instance.PlayerInputs.Player.Look.ReadValue<Vector2>().y * MouseSensitivity / 10 * Time.deltaTime;
 
-                _xRotation -= mouseY;
-                _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
+            _xRotation -= mouseY;
+            _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
 
-                transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
-                _playerBody.Rotate(Vector3.up * mouseX);
+            transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
+            _playerBody.Rotate(Vector3.up * mouseX);
 
-                transform.localPosition = Vector3.Lerp(transform.localPosition, _originalLocalPosition, CamSpeedSensitivity);
-                Cursor.lockState = CursorLockMode.Locked;
-            }
-            else
-            {
-                transform.position = Vector3.Lerp(transform.position, CamTargetPos.position, CamSpeedSensitivity);
-                transform.rotation = Quaternion.Lerp(transform.rotation, CamTargetPos.rotation, CamSpeedSensitivity);
-                Cursor.lockState = CursorLockMode.None;
-            }
+            transform.localPosition = Vector3.Lerp(transform.localPosition, _originalLocalPosition, CamSpeedSensitivity);
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            transform.position = Vector3.Lerp(transform.position, CamTargetPos.position, CamSpeedSensitivity);
+            transform.rotation = Quaternion.Lerp(transform.rotation, CamTargetPos.rotation, CamSpeedSensitivity);
+            Cursor.lockState = CursorLockMode.None;
         }
     }
+
+    //Debug see front object if pb
+    //private void FixedUpdate()
+    //{
+    //    RaycastHit hit;
+    //    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 1000))
+    //    {
+    //        Debug.Log(hit.transform.name);
+    //    }
+    //}
 }
