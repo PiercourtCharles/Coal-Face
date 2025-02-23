@@ -40,7 +40,7 @@ public class ConveyorBelt : MonoBehaviour
         if (!GameManager.Instance.IsGamePause)
         {
             if (other.GetComponent<BeltRef>() != null && !GameManager.Instance.IsGamePause)
-                other.transform.position += _direction.normalized * _actualSpeed * Time.deltaTime;
+                other.transform.localPosition += _direction.normalized * _actualSpeed * Time.deltaTime;
         }
     }
 
