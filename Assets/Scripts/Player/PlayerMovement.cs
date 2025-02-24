@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 _velocity;
     bool _isGrounded;
+    [SerializeField] Animator _animator;
 
     void Update()
     {
@@ -58,6 +59,8 @@ public class PlayerMovement : MonoBehaviour
             else
                 IsMoving = false;
 
+            _animator.SetBool("IsWalking",IsMoving);
+
             //Run
             if (PlayerComponentManager.Instance.PlayerInputs.Player.Run.ReadValue<float>() != 0)
             {
@@ -69,12 +72,15 @@ public class PlayerMovement : MonoBehaviour
                 _controller.Move(move * _speed * Time.deltaTime);
                 IsRunning = false;
             }
+            _animator.SetBool("IsRunning", IsRunning);
 
             //Jump
             if (PlayerComponentManager.Instance.PlayerInputs.Player.Jump.ReadValue<float>() != 0 && _isGrounded)
             {
                 _velocity.y = Mathf.Sqrt(_jumpForce * -2f * _gravity);
+                _animator.SetTrigger("IsJumping");
             }
+
 
             _velocity.y += _gravity * Time.deltaTime;
 

@@ -1284,6 +1284,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SK_temp_player2Anim
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e46af3e04c8544949ad7545ab55d70e8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1571482656849253174, guid: e46af3e04c8544949ad7545ab55d70e8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

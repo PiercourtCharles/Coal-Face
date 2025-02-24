@@ -3074,6 +3074,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 389764037}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &394298528 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7251862028188034058, guid: 94764f94bb662124a8e7e7a9491d43bd, type: 3}
+  m_PrefabInstance: {fileID: 528919301}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &403946973
 GameObject:
   m_ObjectHideFlags: 0
@@ -3968,6 +3973,14 @@ PrefabInstance:
     - target: {fileID: 2764168409848756317, guid: 94764f94bb662124a8e7e7a9491d43bd, type: 3}
       propertyPath: m_Name
       value: First Person Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4452739697301890422, guid: 94764f94bb662124a8e7e7a9491d43bd, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 394298528}
+    - target: {fileID: 4452739697301890422, guid: 94764f94bb662124a8e7e7a9491d43bd, type: 3}
+      propertyPath: _groundMask.m_Bits
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4462032062694283854, guid: 94764f94bb662124a8e7e7a9491d43bd, type: 3}
       propertyPath: m_LocalPosition.x
