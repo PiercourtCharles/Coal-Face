@@ -13,7 +13,10 @@ public class Interactions : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance.IsGamePause || PlayerComponentManager.Instance.Stats.IsDead)
+        if (GameManager.Instance != null && GameManager.Instance.IsGamePause)
+            return;
+
+        if (PlayerComponentManager.Instance.Stats.IsDead)
             return;
 
         RaycastHit hit;

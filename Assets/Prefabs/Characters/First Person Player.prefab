@@ -471,6 +471,7 @@ MonoBehaviour:
   _groundMask:
     serializedVersion: 2
     m_Bits: 0
+  _animator: {fileID: 7251862028188034058}
 --- !u!114 &6546229915444403052
 MonoBehaviour:
   m_ObjectHideFlags: 0

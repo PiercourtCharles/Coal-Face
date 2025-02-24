@@ -1,12 +1,14 @@
 using System;
 using System.Linq;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Crank : MonoBehaviour
 {
     public float Angle = 0;
 
     [SerializeField] Transform _parentRotation;
+    [Range(0f, 45f)][SerializeField] float _rangeFrom0Snap = 15;
     [Tooltip("Not used now")] [Range(0f, 100f)] [SerializeField] float _rigidity = 0.5f;
     [Tooltip("Minimum and maximum angle")] [SerializeField] Vector2 _angleLimit;
     [SerializeField] bool _isLockAngles = false;
@@ -40,6 +42,9 @@ public class Crank : MonoBehaviour
 
     private void OnMouseUp()
     {
+        if (Angle < _rangeFrom0Snap && Angle > -_rangeFrom0Snap)
+            ChangeAngle(0);
+
         _centerParentScreenPos = null;
     }
 
@@ -47,5 +52,6 @@ public class Crank : MonoBehaviour
     {
         _parentRotation.rotation = Quaternion.Euler(_parentRotation.rotation.x, angle, _parentRotation.rotation.z);
         _parentRotation.localRotation = new Quaternion(0, _parentRotation.localRotation.y, 0, _parentRotation.localRotation.w);
+        Angle = angle;
     }
 }

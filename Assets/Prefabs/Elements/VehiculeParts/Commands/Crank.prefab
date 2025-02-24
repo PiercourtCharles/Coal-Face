@@ -329,6 +329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Angle: 0
   _parentRotation: {fileID: 8136788406977304085}
+  _rangeFrom0Snap: 15
   _rigidity: 1
   _angleLimit: {x: 0, y: 180}
   _isLockAngles: 0

@@ -2,15 +2,12 @@ using UnityEngine;
 
 public class VehiculePanelManager : MonoBehaviour
 {
-    public Vector3 Position = Vector3.zero;
     public Interactible Power;
     public Interactible PowerLights;
     public Interactible Drill;
 
-    [SerializeField] Interactible _front;
-    [SerializeField] Interactible _back;
-    [SerializeField] Interactible _right;
-    [SerializeField] Interactible _left;
+    [SerializeField] PowerLever _powerLever;
+    [SerializeField] Crank _crank;
     [SerializeField] float _speedMove;
     [SerializeField] float _speedRot;
 
@@ -18,7 +15,8 @@ public class VehiculePanelManager : MonoBehaviour
     {
         if (!GameManager.Instance.IsGamePause)
         {
-            Vector3 direction = Vector3.zero;
+            float movement = 0;
+            float rotation = 0;
 
             if (GameManager.Instance.Furnase.IsBreak)
                 Power.ChangeTarget(false);
@@ -27,32 +25,22 @@ public class VehiculePanelManager : MonoBehaviour
             {
                 StartCoroutine(GameManager.Instance.Shaker.Shake(0.1f, 0.01f));
 
-                if (_front.IsActive)
-                {
-                    direction += Vector3.up;
-                }
-                if (_back.IsActive)
-                {
-                    direction += Vector3.down;
-                }
-                if (_right.IsActive)
-                {
-                    direction += Vector3.right;
-                }
-                if (_left.IsActive)
-                {
-                    direction += Vector3.left;
-                }
+                if (_powerLever.Value != 0)
+                    movement += Mathf.Sign(_powerLever.Value);
+
+                if (_crank.Angle != 0)
+                    rotation += Mathf.Sign(_crank.Angle);
+
+                Debug.Log($@"move : {movement}
+rot : {rotation}");
             }
 
-            if (direction != Vector3.zero)
+            if (movement != 0 || rotation != 0)
             {
-                var movement = direction.normalized * _speedMove * Time.deltaTime;
-                var rotation = direction.normalized * _speedRot * Time.deltaTime;
+                movement = movement * _speedMove * Time.deltaTime;
+                rotation = rotation * _speedRot * Time.deltaTime;
 
-                Position += movement;
-
-                GameManager.Instance.Mining.Move(new Vector3(0, movement.y), Quaternion.Euler(new Vector3(0, 0, rotation.x)));
+                GameManager.Instance.Mining.Move(new Vector3(0, movement), Quaternion.Euler(new Vector3(0, 0, rotation)));
             }
         }
     }
