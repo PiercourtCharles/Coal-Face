@@ -82,6 +82,7 @@ public class Interactions : MonoBehaviour
                     var furnase = hit.transform.GetComponent<Furnase>();
                     var panel = hit.transform.GetComponent<ControlPanel>();
                     var bed = hit.transform.GetComponent<Bed>();
+                    var interact = hit.transform.GetComponent<Interactible>();
 
                     if (door != null)
                         door.DoorInt.OnAction(door, Hands);
@@ -95,6 +96,8 @@ public class Interactions : MonoBehaviour
                         panel.PanelInt.OnAction(panel, Hands);
                     else if (bed != null)
                         bed.PanelInt.OnAction(bed, Hands);
+                    else if (interact != null && interact.IsActivableOut)
+                        interact.ChangeTarget();
                 }
             }
             else

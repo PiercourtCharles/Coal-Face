@@ -30,9 +30,6 @@ public class VehiculePanelManager : MonoBehaviour
 
                 if (_crank.Angle != 0)
                     rotation += Mathf.Sign(_crank.Angle);
-
-                Debug.Log($@"move : {movement}
-rot : {rotation}");
             }
 
             if (movement != 0 || rotation != 0)
