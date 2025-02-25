@@ -9,7 +9,6 @@ public class ConveyorBelt : MonoBehaviour
     [SerializeField] Transform _parentRessources;
     [SerializeField] Portal _spawnPointRessources;
     [Header("Move")]
-    [SerializeField] Vector3 _direction;
     [SerializeField] float _speed;
 
     float _actualSpeed;
@@ -19,29 +18,23 @@ public class ConveyorBelt : MonoBehaviour
         if (GameManager.Instance != null && GameManager.Instance.IsGamePause)
             return;
 
-        if (GameManager.Instance != null && GameManager.Instance.Furnase.IsBreak && _actualSpeed > 0)
+        if (GameManager.Instance == null)
+            return;
+
+        if (GameManager.Instance.Furnase != null && GameManager.Instance.Furnase.IsBreak && _actualSpeed > 0)
         {
             _actualSpeed -= Time.deltaTime;
 
             if (_actualSpeed < 0)
                 _actualSpeed = 0;
         }
-        else if (_actualSpeed < _speed && GameManager.Instance != null && GameManager.Instance.PanelControl.Power.IsActive)
+        else if (_actualSpeed < _speed && GameManager.Instance.PanelControl != null && GameManager.Instance.PanelControl.Power.IsActive)
         {
             _actualSpeed += Time.deltaTime;
 
             if (_actualSpeed > _speed)
                 _actualSpeed = _speed;
         }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (GameManager.Instance != null && GameManager.Instance.IsGamePause)
-            return;
-
-        if (other.GetComponent<BeltRef>() != null && GameManager.Instance != null && !GameManager.Instance.IsGamePause)
-            other.transform.localPosition += _direction.normalized * _actualSpeed * Time.deltaTime;
     }
 
     public void SpawnRessource(GameObject obj)

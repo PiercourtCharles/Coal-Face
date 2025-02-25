@@ -63,7 +63,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6359703517724529635}
+  - {fileID: 1108479469133438091}
   m_Father: {fileID: 3151051180257099836}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &6704102791160970193
@@ -79,11 +79,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lever: {fileID: 5122986139132169003}
-  _openRot: {x: 0, y: 0, z: 30}
-  _closeRot: {x: 0, y: 0, z: 0}
+  _openRot: {x: 0, y: -90, z: 30}
+  _closeRot: {x: 0, y: -90, z: 0}
   _liftSpeed: 0.1
   _isLift: 0
---- !u!1001 &1519813299892123731
+--- !u!1001 &4771386474131961659
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -92,12 +92,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 3308977820217942378}
     m_Modifications:
     - target: {fileID: 5572433247070989232, guid: 96b4f0a52cf10d143afb526c2c01d56d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 5572433247070989232, guid: 96b4f0a52cf10d143afb526c2c01d56d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5572433247070989232, guid: 96b4f0a52cf10d143afb526c2c01d56d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -140,15 +136,14 @@ PrefabInstance:
       value: ConveyorBelt
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 3828722631095544638, guid: 96b4f0a52cf10d143afb526c2c01d56d, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96b4f0a52cf10d143afb526c2c01d56d, type: 3}
---- !u!4 &6359703517724529635 stripped
+--- !u!4 &1108479469133438091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5572433247070989232, guid: 96b4f0a52cf10d143afb526c2c01d56d, type: 3}
-  m_PrefabInstance: {fileID: 1519813299892123731}
+  m_PrefabInstance: {fileID: 4771386474131961659}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6921625438344887025
 PrefabInstance:

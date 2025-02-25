@@ -12,9 +12,9 @@ public class Portal : MonoBehaviour
     }
 
     public Transform Gate;
-
     [SerializeField] Portal _connectPortal;
     [SerializeField] ObjectType _objType;
+    [SerializeField] GameObject[] _beltsOn;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,7 +22,16 @@ public class Portal : MonoBehaviour
             Teleport(other.transform);
 
         if (_objType == ObjectType.Belt && other.GetComponent<BeltRef>() != null)
-            Teleport(other.transform);
+        {
+            for (int i = 0; i < _beltsOn.Length; i++)
+            {
+                if (_beltsOn[i] == other.GetComponent<BeltRef>().gameObject)
+                {
+                    Teleport(other.transform);
+                    return;
+                }
+            }
+        }
 
         if (_objType == ObjectType.Other)
             Teleport(other.transform);
@@ -35,7 +44,7 @@ public class Portal : MonoBehaviour
         else
         {
             tf.transform.position += _connectPortal.Gate.position - Gate.position;
-            tf.transform.rotation = Quaternion.Euler(tf.transform.rotation.eulerAngles + _connectPortal.Gate.rotation.eulerAngles - Gate.rotation.eulerAngles);
+            //tf.transform.rotation = Quaternion.Euler(tf.transform.rotation.eulerAngles + _connectPortal.Gate.rotation.eulerAngles - Gate.rotation.eulerAngles);
         }
     }
 }

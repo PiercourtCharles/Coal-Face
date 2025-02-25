@@ -3,6 +3,7 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
     [Header("Values :")]
+    public Transform CamTargetPosOnHead;
     public Transform CamTargetPos;
 
     [Range(0, 200)]
@@ -16,12 +17,10 @@ public class MouseLook : MonoBehaviour
 
     [SerializeField] Transform _playerBody;
 
-    Vector3 _originalLocalPosition;
     float _xRotation = 0f;
 
     void Start()
     {
-        _originalLocalPosition = transform.localPosition;
         _xRotation = transform.localRotation.x;
     }
 
@@ -44,7 +43,7 @@ public class MouseLook : MonoBehaviour
             transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
             _playerBody.Rotate(Vector3.up * mouseX);
 
-            transform.localPosition = Vector3.Lerp(transform.localPosition, _originalLocalPosition, CamSpeedSensitivity);
+            transform.position = Vector3.Lerp(transform.position, CamTargetPosOnHead.position, CamSpeedSensitivity);
             Cursor.lockState = CursorLockMode.Locked;
         }
         else

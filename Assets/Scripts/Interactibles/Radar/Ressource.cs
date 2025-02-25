@@ -16,7 +16,7 @@ public class Ressource : MonoBehaviour
 
     private void Update()
     {
-        if (IsShow)
+        if (IsShow && GameManager.Instance.Mining != null)
         {
             if ((GameManager.Instance.Mining.transform.position - transform.position).magnitude < DistanceShow && !Mesh.activeSelf)
                 Mesh.SetActive(true);
