@@ -19493,6 +19493,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PipeBreakable
       objectReference: {fileID: 0}
+    - target: {fileID: 6473890126489001798, guid: 92e38d4cb87444b4facc0d0f564da285, type: 3}
+      propertyPath: _breakTimer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6685475376446023029, guid: 92e38d4cb87444b4facc0d0f564da285, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.3
@@ -19534,7 +19538,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4801270167078176631, guid: 92e38d4cb87444b4facc0d0f564da285, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92e38d4cb87444b4facc0d0f564da285, type: 3}
