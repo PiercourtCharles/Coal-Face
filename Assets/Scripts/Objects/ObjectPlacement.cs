@@ -18,7 +18,7 @@ public class ObjectPlacement : MonoBehaviour
 
     private void Start()
     {
-        if (SubType == ObjectInfos.ObjectSubType.Fuse || SubType == ObjectInfos.ObjectSubType.Pipe)
+        if (SubType == ObjectInfos.ObjectSubType.Fuse || SubType == ObjectInfos.ObjectSubType.Pipe || SubType == ObjectInfos.ObjectSubType.Rod)
             BreakTypeStart();
 
         if (SubType == ObjectInfos.ObjectSubType.Fuel)
@@ -29,7 +29,7 @@ public class ObjectPlacement : MonoBehaviour
     {
         if (!GameManager.Instance.IsGamePause)
         {
-            if (SubType == ObjectInfos.ObjectSubType.Fuse || SubType == ObjectInfos.ObjectSubType.Pipe)
+            if (SubType == ObjectInfos.ObjectSubType.Fuse || SubType == ObjectInfos.ObjectSubType.Pipe || SubType == ObjectInfos.ObjectSubType.Rod)
                 BreakTypeUpdate();
 
             if (SubType == ObjectInfos.ObjectSubType.Fuel)
@@ -39,7 +39,7 @@ public class ObjectPlacement : MonoBehaviour
 
     public void Repair()
     {
-        if (SubType == ObjectInfos.ObjectSubType.Fuse || SubType == ObjectInfos.ObjectSubType.Pipe)
+        if (SubType == ObjectInfos.ObjectSubType.Fuse || SubType == ObjectInfos.ObjectSubType.Pipe || SubType == ObjectInfos.ObjectSubType.Rod)
             BreakRepair();
 
         if (SubType == ObjectInfos.ObjectSubType.Fuel)

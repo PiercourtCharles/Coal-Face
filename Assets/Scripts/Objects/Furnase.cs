@@ -25,7 +25,10 @@ public class Furnase : MonoBehaviour
 
     private void Update()
     {
-        if (!GameManager.Instance.IsGamePause && !IsInfinit)
+        if (GameManager.Instance != null && GameManager.Instance.IsGamePause)
+            return;
+
+        if (!IsInfinit)
         {
             if (_timer >= TimerTarget)
             {
