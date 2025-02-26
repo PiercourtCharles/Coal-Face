@@ -743,7 +743,7 @@ MonoBehaviour:
   DialogText: {fileID: 7568965619516534294}
   _DialogParent: {fileID: 7408770709264176574}
   _actualDialogue: {fileID: 11400000, guid: 36b27cdde2b2b3b4ab8be52797e2263e, type: 2}
-  _timerValue: 0.5
+  _timerValue: 4
 --- !u!1 &4972880303607864645
 GameObject:
   m_ObjectHideFlags: 0
