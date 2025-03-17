@@ -12,6 +12,7 @@ Material:
   m_Parent: {fileID: 2100000, guid: b684f9a9a9721b0438fe2e635d184f43, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _DISABLE_SSR_TRANSPARENT
   - _FORCE_VALUE_METALIC
   - _MAPTYPE_DEFAULT
   - _SYSTEMTYPE_MAP
@@ -20,9 +21,14 @@ Material:
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    MotionVector: User
   disabledShaderPasses:
   - MOTIONVECTORS
+  - TransparentDepthPrepass
+  - TransparentDepthPostpass
+  - TransparentBackface
+  - RayTracingPrepass
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -72,6 +78,22 @@ Material:
     - _Color: {r: 0.08228014, g: 0.3931267, b: 0.40566036, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
+--- !u!114 &2205002090044007898
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da692e001514ec24dbc4cca1949ff7e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 13
+  hdPluginSubTargetMaterialVersions:
+    m_Keys: []
+    m_Values: 
 --- !u!114 &5323615316089347538
 MonoBehaviour:
   m_ObjectHideFlags: 11
