@@ -12575,7 +12575,7 @@
             "m_Id": "f2f11ca075c54317939734188c2fb582"
         }
     ],
-    "m_CustomEditorGUI": "",
+    "m_CustomEditorGUI": "Needle.MarkdownShaderGUI",
     "m_SupportVFX": false,
     "m_SupportLineRendering": false
 }
