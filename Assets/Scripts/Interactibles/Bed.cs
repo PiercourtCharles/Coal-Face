@@ -18,7 +18,7 @@ public class Bed : MonoBehaviour
     {
         IsInBed = !IsInBed;
         Debug.Log("In bed " + IsInBed);
-        var player = PlayerComponentManager.Instance;
+        var player = PlayerManager.Instance;
 
         if (IsInBed)
         {
@@ -41,9 +41,10 @@ public class Bed : MonoBehaviour
         if (_coroutine != null)
             StopCoroutine(_coroutine);
 
+        var player = PlayerManager.Instance;
+
         if (valid)
         {
-            var player = PlayerComponentManager.Instance;
             player.Movement.IsParalysed = true;
             player.Look.IsOnHead = false;
             player.Look.CamTargetPos = CamPosPanel;
@@ -63,7 +64,6 @@ public class Bed : MonoBehaviour
                 yield return new WaitForSeconds(Time.deltaTime);
             }
 
-            var player = PlayerComponentManager.Instance;
             player.Movement.IsParalysed = false;
             player.Look.IsOnHead = true;
             player.Look.CamTargetPos = null;

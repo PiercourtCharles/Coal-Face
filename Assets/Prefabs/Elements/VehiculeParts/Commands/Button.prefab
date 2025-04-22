@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8679459788339286363}
   - component: {fileID: 4553989378417922529}
   - component: {fileID: 5621574300988326488}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,6 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActiveObjectInteract: {fileID: 0}
   IsActive: 0
+  IsActivableOut: 0
   _openRot: {x: -60, y: 0, z: 0}
   _closeRot: {x: -30, y: 0, z: 0}
   _actualTarget: {x: 0, y: 0, z: 0}

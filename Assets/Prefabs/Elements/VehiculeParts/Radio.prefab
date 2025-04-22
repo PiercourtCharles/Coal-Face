@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2778511782559810151}
   - component: {fileID: 1465747668274313319}
   - component: {fileID: 6162835601526705854}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 699932934747444362}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: CamPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 5052476922680395991}
   - component: {fileID: 1703182815878808274}
   - component: {fileID: 9092339693905771045}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: ButtonMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 7742491361814936651}
   - component: {fileID: 5534468748642975555}
   - component: {fileID: 8792426518823740026}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Radio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 6104280964601361316}
   - component: {fileID: 6128742797834937635}
   - component: {fileID: 748323593560532396}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}

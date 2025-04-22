@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6748424934780205176}
   - component: {fileID: 7689988313548231219}
   - component: {fileID: 6878147840519213354}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Bed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 126928124589568136}
   - component: {fileID: 4214810245538561287}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &8271419825340124129
@@ -221,7 +221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2501304715393229791}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: CamPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}

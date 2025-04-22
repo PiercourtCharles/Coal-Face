@@ -3,11 +3,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public bool IsMoving = false;
-    public bool IsRunning = false;
     public bool IsParalysed = false;
 
-    [Header("Froces :")]
+    [Header("Values :")]
     [SerializeField] CharacterController _controller;
 
     [Tooltip("Walking speed")]
@@ -21,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Tooltip("Jump force")]
     [SerializeField] float _jumpForce = 3f;
+    [SerializeField] Animator _charaAnimator;
 
     [Header("Ground :")]
     [Tooltip("Radius check")]
@@ -34,14 +33,15 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 _velocity;
     bool _isGrounded;
-    [SerializeField] Animator _animator;
+    bool _isMoving = false;
+    bool _isRunning = false;
 
     void Update()
     {
-        if (GameManager.Instance != null && GameManager.Instance.IsGamePause)
+        if (PlayerManager.Instance.UiManager.IsGamePause)
             return;
 
-        if (PlayerComponentManager.Instance.Stats.IsDead || IsParalysed)
+        if (PlayerManager.Instance.Stats.IsDead || IsParalysed)
             return;
 
         //Ground check
@@ -53,37 +53,37 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Move
-        float x = PlayerComponentManager.Instance.PlayerInputs.Player.Move.ReadValue<Vector2>().x;
-        float z = PlayerComponentManager.Instance.PlayerInputs.Player.Move.ReadValue<Vector2>().y;
+        float x = PlayerManager.Instance.PlayerInputs.Player.Move.ReadValue<Vector2>().x;
+        float z = PlayerManager.Instance.PlayerInputs.Player.Move.ReadValue<Vector2>().y;
 
         Vector3 move = transform.right * x + transform.forward * z;
 
         if (move.magnitude > 0)
-            IsMoving = true;
+            _isMoving = true;
         else
-            IsMoving = false;
+            _isMoving = false;
 
-        _animator.SetBool("IsWalking", IsMoving);
+        _charaAnimator.SetBool("IsWalking", _isMoving);
 
         //Run
-        if (PlayerComponentManager.Instance.PlayerInputs.Player.Run.ReadValue<float>() != 0)
+        if (PlayerManager.Instance.PlayerInputs.Player.Run.ReadValue<float>() != 0)
         {
             _controller.Move(move * (_speed + _runSpeed) * Time.deltaTime);
-            IsRunning = true;
+            _isRunning = true;
         }
         else
         {
             _controller.Move(move * _speed * Time.deltaTime);
-            IsRunning = false;
+            _isRunning = false;
         }
 
-        _animator.SetBool("IsRunning", IsRunning);
+        _charaAnimator.SetBool("_isRunning", _isRunning);
 
         //Jump
-        if (PlayerComponentManager.Instance.PlayerInputs.Player.Jump.ReadValue<float>() != 0 && _isGrounded)
+        if (PlayerManager.Instance.PlayerInputs.Player.Jump.ReadValue<float>() != 0 && _isGrounded)
         {
             _velocity.y = Mathf.Sqrt(_jumpForce * -2f * _gravity);
-            _animator.SetTrigger("IsJumping");
+            _charaAnimator.SetTrigger("IsJumping");
         }
 
         _velocity.y += _gravity * Time.deltaTime;

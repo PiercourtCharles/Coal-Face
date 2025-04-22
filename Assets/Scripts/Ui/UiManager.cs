@@ -4,9 +4,7 @@ using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
-    [Header("Ui :")]
-    public UiScreenControl ScreenControl;
-    public UiPlayer UiPlayer;
+    public bool IsGamePause = false;
 
     [SerializeField] Transform _uiMenu;
     [SerializeField] TextMeshProUGUI _uiTimer;
@@ -18,25 +16,42 @@ public class UiManager : MonoBehaviour
     private void Start()
     {
         _uiMenu.gameObject.SetActive(false);
-        _slider.value = PlayerComponentManager.Instance.Look.MouseSensitivity;
+        _slider.maxValue = 200;
+        _slider.value = PlayerManager.Instance.Look.MouseSensitivity;
     }
 
     private void Update()
     {
-        if (!PlayerComponentManager.Instance.Stats.IsDead)
+        PauseMenu();
+    }
+
+    void Ui()
+    {
+        PlayerManager.Instance.Look.MouseSensitivity = _slider.value;
+        _uiText.text = _slider.value + "/" + _slider.maxValue;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    void PauseMenu()
+    {
+        if (!PlayerManager.Instance.Stats.IsDead)
         {
-            if (!GameManager.Instance.IsGamePause)
+            if (!IsGamePause)
             {
                 _time += Time.deltaTime;
-                _uiTimer.text = "Time : " + (int)_time;
+                _uiTimer.text = "Time : " + (int)_time + "s";
             }
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                _uiMenu.gameObject.SetActive(!_uiMenu.gameObject.activeSelf);
-                GameManager.Instance.IsGamePause = _uiMenu.gameObject.activeSelf;
+                IsGamePause = !_uiMenu.gameObject.activeSelf;
+                _uiMenu.gameObject.SetActive(IsGamePause);
 
-                if (Cursor.lockState != CursorLockMode.Locked)
+                if (!IsGamePause)
                     Cursor.lockState = CursorLockMode.Locked;
                 else
                     Cursor.lockState = CursorLockMode.None;
@@ -49,16 +64,5 @@ public class UiManager : MonoBehaviour
         }
         else
             Cursor.lockState = CursorLockMode.None;
-    }
-
-    void Ui()
-    {
-        PlayerComponentManager.Instance.Look.MouseSensitivity = _slider.value;
-        _uiText.text = _slider.value + "/" + _slider.maxValue;
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
     }
 }

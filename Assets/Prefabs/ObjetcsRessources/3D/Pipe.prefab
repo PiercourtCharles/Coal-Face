@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2583788532813640467}
   - component: {fileID: 4937389709316071746}
   - component: {fileID: 1258723302550525774}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 769536598825057565}
   - component: {fileID: 8678213883176660948}
   - component: {fileID: 5393294800705699992}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: PipeMeshRepair
   m_TagString: Untagged
   m_Icon: {fileID: 0}

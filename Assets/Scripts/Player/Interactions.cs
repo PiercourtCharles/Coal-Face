@@ -5,7 +5,7 @@ public class Interactions : MonoBehaviour
     [Header("Parameters :")]
     [SerializeField] float _distance;
     [SerializeField] LayerMask _interactions;
-    [SerializeField] GameObject _uiText;
+    [SerializeField] GameObject _visualFeedBack;
     [SerializeField] Transform _obj;
 
     [Header("Hands :")]
@@ -13,15 +13,15 @@ public class Interactions : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance != null && GameManager.Instance.IsGamePause)
+        if (PlayerManager.Instance.UiManager.IsGamePause)
             return;
 
-        if (PlayerComponentManager.Instance.Stats.IsDead)
+        if (PlayerManager.Instance.Stats.IsDead)
             return;
 
         RaycastHit hit;
 
-        if (PlayerComponentManager.Instance.PlayerInputs.Player.Eject.triggered && Hands.GetObjectInHand(0) != null)
+        if (PlayerManager.Instance.PlayerInputs.Player.Eject.triggered && Hands.GetObjectInHand(0) != null)
         {
             Hands.GetObjectInHand(0).GetComponent<ObjectsComponents>().Grab(null);
             Hands.LoseObjectInHand(0);
@@ -31,7 +31,7 @@ public class Interactions : MonoBehaviour
         Vector3 origin = transform.position;
         Debug.DrawLine(origin, origin + transform.TransformDirection(Vector3.forward) * _distance);
 
-        if (!PlayerComponentManager.Instance.Look.IsOnHead)
+        if (!PlayerManager.Instance.Look.IsOnHead)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -41,7 +41,7 @@ public class Interactions : MonoBehaviour
                 //Debug.Log(hit.point);
                 _obj.position = hit.point;
 
-                if (PlayerComponentManager.Instance.PlayerInputs.Player.Interact.triggered)
+                if (PlayerManager.Instance.PlayerInputs.Player.Interact.triggered)
                 {
                     //Interactibles/Radio/Panel
                     var inter = hit.transform.GetComponent<Interactible>();
@@ -60,50 +60,50 @@ public class Interactions : MonoBehaviour
                 }
             }
 
-            if (_uiText != null)
-                _uiText.SetActive(false);
+            if (_visualFeedBack != null)
+                _visualFeedBack.SetActive(false);
         }
         else
         {
             _obj.gameObject.SetActive(false);
 
             //Ray
-            if (Physics.Raycast(origin, transform.forward, out hit, _distance, _interactions) && PlayerComponentManager.Instance.Look.IsOnHead)
+            if (Physics.Raycast(origin, transform.forward, out hit, _distance, _interactions) && PlayerManager.Instance.Look.IsOnHead)
             {
-                if (_uiText != null)
-                    _uiText.SetActive(true);
+                if (_visualFeedBack != null)
+                    _visualFeedBack.SetActive(true);
 
-                if (PlayerComponentManager.Instance.PlayerInputs.Player.Interact.triggered)
+                if (PlayerManager.Instance.PlayerInputs.Player.Interact.triggered)
                 {
-                    //Doors/Objects/Objects placement/Furnase/Panel
-                    var door = hit.transform.GetComponent<Doors>();
                     var obj = hit.transform.GetComponent<ObjectsComponents>();
                     var place = hit.transform.GetComponent<ObjectPlacement>();
+                    var interact = hit.transform.GetComponent<Interactible>();
+                    //Doors/Objects/Objects placement/Furnase/Panel
+                    var door = hit.transform.GetComponent<Doors>();
                     var furnase = hit.transform.GetComponent<Furnase>();
                     var panel = hit.transform.GetComponent<ControlPanel>();
                     var bed = hit.transform.GetComponent<Bed>();
-                    var interact = hit.transform.GetComponent<Interactible>();
 
+                    if (obj != null)
+                        obj.ObjInt.OnAction(obj, Hands);
+                    if (place != null)
+                        place.PlacementInt.OnAction(place, Hands);
+                    if (interact != null && interact.IsActivableOut)
+                        interact.ChangeTarget();
                     if (door != null)
                         door.DoorInt.OnAction(door, Hands);
-                    else if (obj != null)
-                        obj.ObjInt.OnAction(obj, Hands);
-                    else if (place != null)
-                        place.PlacementInt.OnAction(place, Hands);
                     else if (furnase != null)
                         furnase.FurnaseInt.OnAction(furnase, Hands);
                     else if (panel != null)
                         panel.PanelInt.OnAction(panel, Hands);
                     else if (bed != null)
                         bed.PanelInt.OnAction(bed, Hands);
-                    else if (interact != null && interact.IsActivableOut)
-                        interact.ChangeTarget();
                 }
             }
             else
             {
-                if (_uiText != null)
-                    _uiText.SetActive(false);
+                if (_visualFeedBack != null)
+                    _visualFeedBack.SetActive(false);
             }
         }
 
@@ -113,7 +113,6 @@ public class Interactions : MonoBehaviour
     //private void OnDrawGizmos()
     //{
     //    Gizmos.color = Color.blue;
-
     //    Gizmos.DrawLine(transform.position, transform.position + transform.TransformDirection(Vector3.forward) * _distance);
     //}
 }

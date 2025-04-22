@@ -9,14 +9,12 @@ public class MouseLook : MonoBehaviour
     [Range(0, 200)]
     public float MouseSensitivity = 100f;
 
-    [Range(0f, 0.5f)]
+    [Range(0f, 1f)]
     [Tooltip("When changing pos")]
     public float CamSpeedSensitivity = 0.1f;
-
     public bool IsOnHead = true;
 
     [SerializeField] Transform _playerBody;
-
     float _xRotation = 0f;
 
     void Start()
@@ -26,16 +24,16 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.Instance != null && GameManager.Instance.IsGamePause)
+        if (PlayerManager.Instance.UiManager.IsGamePause)
             return;
 
-        if (PlayerComponentManager.Instance.Stats.IsDead)
+        if (PlayerManager.Instance.Stats.IsDead)
             return;
 
         if (IsOnHead)
         {
-            float mouseX = PlayerComponentManager.Instance.PlayerInputs.Player.Look.ReadValue<Vector2>().x * MouseSensitivity / 10 * Time.deltaTime;
-            float mouseY = PlayerComponentManager.Instance.PlayerInputs.Player.Look.ReadValue<Vector2>().y * MouseSensitivity / 10 * Time.deltaTime;
+            float mouseX = PlayerManager.Instance.PlayerInputs.Player.Look.ReadValue<Vector2>().x * MouseSensitivity / 10 * Time.deltaTime;
+            float mouseY = PlayerManager.Instance.PlayerInputs.Player.Look.ReadValue<Vector2>().y * MouseSensitivity / 10 * Time.deltaTime;
 
             _xRotation -= mouseY;
             _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);

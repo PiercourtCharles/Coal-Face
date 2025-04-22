@@ -12,7 +12,7 @@ public class ControlPanel : MonoBehaviour
     {
         IsInControlMod = !IsInControlMod;
         Debug.Log("Touch the panel " + IsInControlMod);
-        var player = PlayerComponentManager.Instance;
+        var player = PlayerManager.Instance;
 
         if (IsInControlMod)
         {

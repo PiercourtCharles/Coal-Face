@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 1449919797779318804}
   - component: {fileID: 6536256145823531543}
   - component: {fileID: 7567842937145308626}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HandGrab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,5 +264,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: 0
   _rigidity: 0.1
+  _rangeFrom0Snap: 0.1
   _distanceLimit: {x: -0.4, y: 0.4}
   _isVertical: 1

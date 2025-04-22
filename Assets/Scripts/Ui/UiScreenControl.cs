@@ -20,25 +20,25 @@ public class UiScreenControl : MonoBehaviour
             return;
 
         //Air
-        if (GameManager.Instance.PanelControl != null && !GameManager.Instance.PanelControl.Power.IsActive ||
-            GameManager.Instance.Fuses.Length >= 1 && GameManager.Instance.Fuses[1] != null && GameManager.Instance.Fuses[1].IsBreak)
-        {
-            _air.fillAmount -= _airLoss * Time.deltaTime;
+        //if (GameManager.Instance.PanelControl != null && !GameManager.Instance.PanelControl.Power.IsActive ||
+        //    GameManager.Instance.Fuses.Length >= 1 && GameManager.Instance.Fuses[1] != null && GameManager.Instance.Fuses[1].IsBreak)
+        //{
+        //    _air.fillAmount -= _airLoss * Time.deltaTime;
 
-            if (_air.fillAmount <= 0)
-            {
-                _air.fillAmount = 0;
-                PlayerComponentManager.Instance.Stats.Air -= Time.deltaTime;
-                PlayerComponentManager.Instance.Stats.CheckDeath();
-            }
-        }
-        else
-        {
-            _air.fillAmount += _airLoss * Time.deltaTime;
+        //    if (_air.fillAmount <= 0)
+        //    {
+        //        _air.fillAmount = 0;
+        //        PlayerComponentManager.Instance.Stats.Air -= Time.deltaTime;
+        //        PlayerComponentManager.Instance.Stats.CheckDeath();
+        //    }
+        //}
+        //else
+        //{
+        //    _air.fillAmount += _airLoss * Time.deltaTime;
 
-            if (_air.fillAmount >= 1)
-                _air.fillAmount = 1;
-        }
+        //    if (_air.fillAmount >= 1)
+        //        _air.fillAmount = 1;
+        //}
     }
 
     private void FixedUpdate()

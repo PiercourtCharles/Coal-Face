@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class PlayerComponentManager : MonoBehaviour
+public class PlayerManager : MonoBehaviour
 {
-    #region Singleton
-    public static PlayerComponentManager Instance;
+    #region Singleton && Input
+    public static PlayerManager Instance;
     public CharaControl PlayerInputs;
 
     private void Awake()
@@ -31,9 +31,9 @@ public class PlayerComponentManager : MonoBehaviour
     public Hands Hands;
 
     public MouseLook Look;
-    public CharacterAnimation Animation;
     public CameraShake Shake;
 
     public Interactions Interactions;
     public PlayerStats Stats;
+    public UiManager UiManager;
 }
