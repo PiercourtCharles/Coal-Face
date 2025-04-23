@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8514836911814417546}
   - component: {fileID: 4692697856800041240}
   - component: {fileID: 6412848484171363681}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: CoalMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 6764753687955778623}
   - component: {fileID: 6593464293456703031}
   - component: {fileID: 6526391204880905492}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Coal
   m_TagString: Untagged
   m_Icon: {fileID: 0}

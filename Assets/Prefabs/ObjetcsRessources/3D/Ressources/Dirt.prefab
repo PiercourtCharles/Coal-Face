@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8514836911814417546}
   - component: {fileID: 4692697856800041240}
   - component: {fileID: 6412848484171363681}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: DirtMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,6 +58,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -95,7 +98,7 @@ GameObject:
   - component: {fileID: 6100554030375266729}
   - component: {fileID: 6593464293456703031}
   - component: {fileID: 6526391204880905492}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Dirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3023457880115594863}
   - component: {fileID: 8628912112333631785}
   - component: {fileID: 2816453364892807642}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Lever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: -3846018093981099296, guid: f182ca90257561c4290f64d3b3381236, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActiveObjectInteract: {fileID: 0}
   IsActive: 0
+  IsActivableOut: 0
   _openRot: {x: -90, y: 0, z: -90}
   _closeRot: {x: 0, y: 0, z: -90}
   _actualTarget: {x: 0, y: 0, z: 0}
@@ -142,7 +143,7 @@ GameObject:
   - component: {fileID: 865398621903481441}
   - component: {fileID: 5388792324232035395}
   - component: {fileID: 5094307579592843029}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +196,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: -3846018093981099296, guid: f182ca90257561c4290f64d3b3381236, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

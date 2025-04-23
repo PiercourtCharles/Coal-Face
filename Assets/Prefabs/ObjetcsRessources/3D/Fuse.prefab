@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2583788532813640467}
   - component: {fileID: 4937389709316071746}
   - component: {fileID: 1258723302550525774}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Fuse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 8264797630480071269}
   - component: {fileID: 3105944133328068485}
   - component: {fileID: 6216123657247686967}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: FuseMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}

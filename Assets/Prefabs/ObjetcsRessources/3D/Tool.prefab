@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7747338048325193234}
   - component: {fileID: 7141986852762643434}
   - component: {fileID: 3329627962436618039}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: UpLock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 6289150719296211000}
   - component: {fileID: 7770891489374363569}
   - component: {fileID: 6306562192621007078}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 8280636918598258289}
   - component: {fileID: 6861907941475280673}
   - component: {fileID: 1298799653472726032}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: DownLock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 4086439369322660638}
   - component: {fileID: 8178897915946392555}
   - component: {fileID: 8444444136541070868}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Tool
   m_TagString: Untagged
   m_Icon: {fileID: 0}

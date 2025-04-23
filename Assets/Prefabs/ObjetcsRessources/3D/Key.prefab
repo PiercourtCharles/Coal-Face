@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7649035637401538539}
   - component: {fileID: 7668446455557317806}
   - component: {fileID: 5677260511093866623}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Teeth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 1115120905333544839}
   - component: {fileID: 5346118956719140781}
   - component: {fileID: 8982114038622120348}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Teeth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 1296041503980815542}
   - component: {fileID: 1157967391296311063}
   - component: {fileID: 2453083399562753456}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 4170984865443916825}
   - component: {fileID: 6979694180350649717}
   - component: {fileID: 3415226062285833107}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Length
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 1024242914742843333}
   - component: {fileID: 1114887507819403053}
   - component: {fileID: 3759032274651218351}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
