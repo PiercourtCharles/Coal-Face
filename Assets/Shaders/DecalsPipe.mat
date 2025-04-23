@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_ParralaxOcclusion
+  m_Name: DecalsPipe
   m_Shader: {fileID: -6465566751694194690, guid: b36f1e23bb327a248b2f0208da2c0375, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -31,6 +31,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_b7bb10a1d41243e4a41469099a6f0418_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 4c850c82b5a591141a460566bc44aa07, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture:
         m_Texture: {fileID: 2800000, guid: 4c850c82b5a591141a460566bc44aa07, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
