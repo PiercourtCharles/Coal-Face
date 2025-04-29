@@ -13,7 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _DISABLE_SSR_TRANSPARENT
-  - _MAPTYPE_DEFAULT
+  - _MAPTYPE_ORM
   - _SYSTEMTYPE_MAP
   m_InvalidKeywords:
   - _NORMALMAP_TANGENT_SPACE
@@ -42,7 +42,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Base_Map:
-        m_Texture: {fileID: 2800000, guid: 1817b723f1c752a40a9528ef424fdb26, type: 3}
+        m_Texture: {fileID: 2800000, guid: d94b6fec3ee54da48b57ff7121bb8aa7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BentNormalMap:
@@ -94,7 +94,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Metallic_Map:
-        m_Texture: {fileID: 2800000, guid: bc25dae7f35d3074f935f342bbec9049, type: 3}
+        m_Texture: {fileID: 2800000, guid: cd599f98e4a7e46489d1b064ba8eb148, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
@@ -106,11 +106,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal_Map:
-        m_Texture: {fileID: 2800000, guid: 64aacb085daa67b4b9c88f5d96426ab0, type: 3}
+        m_Texture: {fileID: 2800000, guid: be75c04e872a37648b9a4b2cdb13d03c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ORM:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 0e164e8f66b5ead4d9c157f773e5105c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Occlusion_Map:
@@ -226,7 +226,7 @@ Material:
     - _IridescenceMask: 1
     - _IridescenceThickness: 1
     - _LinkDetailsWithBase: 1
-    - _MAPTYPE: 0
+    - _MAPTYPE: 1
     - _Map_Tiling_SYSTEMTYPE_MAP: 1
     - _MaterialID: 1
     - _MaterialTypeMask: 2
