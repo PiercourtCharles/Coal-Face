@@ -13,7 +13,6 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _COLORMAP
-  - _MATERIAL_AFFECTS_NORMAL
   - _NORMALMAP
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -24,6 +23,8 @@ Material:
   disabledShaderPasses:
   - DecalMeshForwardEmissive
   - DecalProjectorForwardEmissive
+  - DBufferMesh
+  - DBufferProjector
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -97,11 +98,11 @@ Material:
     - _AffectAlbedo: 0
     - _AffectEmission: 0
     - _AffectMetal: 0
-    - _AffectNormal: 1
+    - _AffectNormal: 0
     - _AffectSmoothness: 0
     - _DecalBlend: 0.5
     - _DecalColorMask0: 0
-    - _DecalColorMask1: 15
+    - _DecalColorMask1: 0
     - _DecalColorMask2: 0
     - _DecalColorMask3: 0
     - _DecalMaskMapBlueScale: 1
