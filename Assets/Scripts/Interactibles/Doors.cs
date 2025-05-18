@@ -17,7 +17,7 @@ public class Doors : MonoBehaviour
 
     private void Start()
     {
-        _actualTargetRot = new Vector3(_door.localRotation.x, _door.localRotation.y, _door.localRotation.z);
+        _actualTargetRot = ChangeRot(_openAngle.x);
     }
 
     private void FixedUpdate()
