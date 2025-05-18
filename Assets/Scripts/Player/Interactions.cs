@@ -81,7 +81,7 @@ public class Interactions : MonoBehaviour
                     //Doors/Objects/Objects placement/Furnase/Panel
                     var door = hit.transform.GetComponent<Doors>();
                     var furnase = hit.transform.GetComponent<Furnase>();
-                    var panel = hit.transform.GetComponent<ControlPanel>();
+                    var panel = hit.transform.GetComponentInParent<ControlPanel>();
                     var bed = hit.transform.GetComponent<Bed>();
 
                     if (obj != null)

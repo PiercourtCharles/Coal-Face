@@ -11,7 +11,7 @@ public class MouseLook : MonoBehaviour
 
     [Range(0f, 1f)]
     [Tooltip("When changing pos")]
-    public float CamSpeedSensitivity = 0.1f;
+    public float CamSpeedTargetChange = 0.1f;
     public bool IsOnHead = true;
 
     [SerializeField] Transform _playerBody;
@@ -41,13 +41,13 @@ public class MouseLook : MonoBehaviour
             transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
             _playerBody.Rotate(Vector3.up * mouseX);
 
-            transform.position = Vector3.Lerp(transform.position, CamTargetPosOnHead.position, CamSpeedSensitivity);
+            transform.position = Vector3.Lerp(transform.position, CamTargetPosOnHead.position, CamSpeedTargetChange);
             Cursor.lockState = CursorLockMode.Locked;
         }
         else
         {
-            transform.position = Vector3.Lerp(transform.position, CamTargetPos.position, CamSpeedSensitivity);
-            transform.rotation = Quaternion.Lerp(transform.rotation, CamTargetPos.rotation, CamSpeedSensitivity);
+            transform.position = Vector3.Lerp(transform.position, CamTargetPos.position, CamSpeedTargetChange);
+            transform.rotation = Quaternion.Lerp(transform.rotation, CamTargetPos.rotation, CamSpeedTargetChange);
             Cursor.lockState = CursorLockMode.None;
         }
     }
