@@ -11,7 +11,7 @@ public class ControlPanel : MonoBehaviour
     public void ChangePanelMod()
     {
         IsInControlMod = !IsInControlMod;
-        Debug.Log("Touch the panel " + IsInControlMod);
+        //Debug.Log("Touch the panel " + IsInControlMod);
         var player = PlayerManager.Instance;
 
         if (IsInControlMod)

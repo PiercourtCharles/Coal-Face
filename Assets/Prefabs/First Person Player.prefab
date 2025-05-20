@@ -550,6 +550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeDuration: 1
   Magnitude: 0.01
+  Speed: 0.01
 --- !u!114 &-3499170975756906145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1216,7 +1217,7 @@ MonoBehaviour:
   CamTargetPosOnHead: {fileID: 6904107300316780638}
   CamTargetPos: {fileID: 0}
   MouseSensitivity: 125
-  CamSpeedSensitivity: 0.5
+  CamSpeedTargetChange: 0.1
   IsOnHead: 1
   _playerBody: {fileID: 7969437767620845226}
 --- !u!114 &6292682269726604551

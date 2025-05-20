@@ -1277,6 +1277,14 @@ PrefabInstance:
       propertyPath: IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5621574300988326488, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
+      propertyPath: _openRot.y
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5621574300988326488, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
+      propertyPath: _closeRot.y
+      value: -15
+      objectReference: {fileID: 0}
     - target: {fileID: 6344213233304303380, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
       propertyPath: m_Name
       value: ButtonOnOffLights
@@ -1423,6 +1431,14 @@ PrefabInstance:
     - target: {fileID: 5621574300988326488, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
       propertyPath: IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5621574300988326488, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
+      propertyPath: _openRot.y
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5621574300988326488, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
+      propertyPath: _closeRot.y
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 6344213233304303380, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
       propertyPath: m_Name
@@ -1723,7 +1739,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3134474450172758277, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.20000002
+      value: 0.36358002
+      objectReference: {fileID: 0}
+    - target: {fileID: 3134474450172758277, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.071844995
       objectReference: {fileID: 0}
     - target: {fileID: 3134474450172758277, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1739,23 +1759,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3134474450172758277, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9576622
+      value: 0.97638255
       objectReference: {fileID: 0}
     - target: {fileID: 3134474450172758277, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.25660485
+      value: 0.17216256
       objectReference: {fileID: 0}
     - target: {fileID: 3134474450172758277, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.12607844
+      value: -0.12854324
       objectReference: {fileID: 0}
     - target: {fileID: 3134474450172758277, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.033782657
+      value: 0.02266564
       objectReference: {fileID: 0}
     - target: {fileID: 3134474450172758277, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3134474450172758277, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1764,6 +1784,22 @@ PrefabInstance:
     - target: {fileID: 3134474450172758277, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5621574300988326488, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
+      propertyPath: _openRot.x
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5621574300988326488, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
+      propertyPath: _openRot.y
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5621574300988326488, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
+      propertyPath: _closeRot.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5621574300988326488, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
+      propertyPath: _closeRot.y
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 6344213233304303380, guid: 2cef2a80fa765164895b38c95bc3139d, type: 3}
       propertyPath: m_Name

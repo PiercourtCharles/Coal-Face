@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
 
     [Tooltip("Running speed")]
     [SerializeField] float _runSpeed = 3f;
+    
+    [Tooltip("Crouching speed")]
+    [SerializeField] float _crouchSpeed = 2f;
 
     [Tooltip("Gravity / fall speed")]
     [SerializeField] float _gravity = -15; //-9.81f;
@@ -35,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     bool _isGrounded;
     bool _isMoving = false;
     bool _isRunning = false;
+    bool _isCrouching = false;
 
     void Update()
     {
@@ -78,6 +82,13 @@ public class PlayerMovement : MonoBehaviour
         }
 
         _charaAnimator.SetBool("_isRunning", _isRunning);
+
+        //Crouch
+        if (PlayerManager.Instance.PlayerInputs.Player.Crouch.ReadValue<float>() != 0)
+        {
+            _controller.Move(move * (_speed + _crouchSpeed) * Time.deltaTime);
+            _isCrouching = true;
+        }
 
         //Jump
         if (PlayerManager.Instance.PlayerInputs.Player.Jump.ReadValue<float>() != 0 && _isGrounded)

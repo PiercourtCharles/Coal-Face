@@ -36,7 +36,7 @@
                     "name": "Run",
                     "type": "Button",
                     "id": "3d38f194-96bb-419e-aaf2-f283c99a6817",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -55,6 +55,15 @@
                     "type": "Button",
                     "id": "4df213b0-6d50-460b-b8e3-57cb63e5d121",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Crouch",
+                    "type": "Button",
+                    "id": "3d483602-498a-498e-8fd3-8998bebe6cea",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -313,6 +322,17 @@
                     "action": "Eject",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6ca80cf5-bb03-496b-ad81-30cb39f44e20",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -333,7 +353,7 @@
                     "name": "Submit",
                     "type": "Button",
                     "id": "03da31fb-001e-4a43-b433-df6f786a1bc1",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -342,7 +362,7 @@
                     "name": "Cancel",
                     "type": "Button",
                     "id": "2f8553ce-47d3-408c-8788-71cf967a21cc",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false

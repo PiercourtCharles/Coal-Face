@@ -5,6 +5,7 @@ public class CameraShake : MonoBehaviour
 {
     public float TimeDuration = 1;
     public float Magnitude = 0.01f;
+    public float Speed = 0.01f;
 
     //private void Update()
     //{
@@ -14,15 +15,15 @@ public class CameraShake : MonoBehaviour
     //    }
     //}
 
-    public IEnumerator Shake(float duration, float magnitude)
+    public IEnumerator Shake()
     {
         Vector3 originalPosition = transform.localPosition;
         float elapsed = 0;
 
-        while (elapsed < duration)
+        while (elapsed < TimeDuration)
         {
-            float x = Random.Range(-1f, 1f) * magnitude;
-            float y = Random.Range(-1f, 1f) * magnitude;
+            float x = Random.Range(-1f, 1f) * Magnitude;
+            float y = Random.Range(-1f, 1f) * Magnitude;
 
             transform.localPosition = new Vector3(x, y, originalPosition.z);
             elapsed += Time.deltaTime;
