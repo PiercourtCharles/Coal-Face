@@ -412,7 +412,7 @@ public partial class @CharaControl: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""6ca80cf5-bb03-496b-ad81-30cb39f44e20"",
-                    ""path"": ""<Keyboard>/ctrl"",
+                    ""path"": ""<Keyboard>/x"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

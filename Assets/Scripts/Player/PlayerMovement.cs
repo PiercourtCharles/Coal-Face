@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XR;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,9 +14,11 @@ public class PlayerMovement : MonoBehaviour
 
     [Tooltip("Running speed")]
     [SerializeField] float _runSpeed = 3f;
-    
+
     [Tooltip("Crouching speed")]
     [SerializeField] float _crouchSpeed = 2f;
+    [SerializeField] Vector3 _crouchCenterCollider = new Vector3(0,-0.5f,0);
+    [SerializeField] float _crouchHeightCollider = 1;
 
     [Tooltip("Gravity / fall speed")]
     [SerializeField] float _gravity = -15; //-9.81f;
@@ -35,10 +38,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] LayerMask _groundMask;
 
     Vector3 _velocity;
+    Vector3 _initialHeightPos;
+    float _initialHeight;
     bool _isGrounded;
     bool _isMoving = false;
     bool _isRunning = false;
     bool _isCrouching = false;
+
+    private void Start()
+    {
+        _initialHeight = _controller.height;
+        _initialHeightPos = _controller.center;
+    }
 
     void Update()
     {
@@ -69,26 +80,39 @@ public class PlayerMovement : MonoBehaviour
 
         _charaAnimator.SetBool("IsWalking", _isMoving);
 
+        float additionnalMoveSpeed = 1;
+
         //Run
         if (PlayerManager.Instance.PlayerInputs.Player.Run.ReadValue<float>() != 0)
         {
-            _controller.Move(move * (_speed + _runSpeed) * Time.deltaTime);
+            additionnalMoveSpeed = _runSpeed;
             _isRunning = true;
         }
         else
         {
-            _controller.Move(move * _speed * Time.deltaTime);
             _isRunning = false;
         }
 
-        _charaAnimator.SetBool("_isRunning", _isRunning);
+        _charaAnimator.SetBool("IsRunning", _isRunning);
 
         //Crouch
         if (PlayerManager.Instance.PlayerInputs.Player.Crouch.ReadValue<float>() != 0)
         {
-            _controller.Move(move * (_speed + _crouchSpeed) * Time.deltaTime);
+            _controller.height = _crouchHeightCollider;
+            _controller.center = _crouchCenterCollider;
+
+            additionnalMoveSpeed = -_crouchSpeed;
             _isCrouching = true;
         }
+        else
+        {
+            _controller.height = _initialHeight;
+            _controller.center = _initialHeightPos;
+
+            _isCrouching = false;
+        }
+
+        _charaAnimator.SetBool("IsCrouching", _isCrouching);
 
         //Jump
         if (PlayerManager.Instance.PlayerInputs.Player.Jump.ReadValue<float>() != 0 && _isGrounded)
@@ -99,7 +123,9 @@ public class PlayerMovement : MonoBehaviour
 
         _velocity.y += _gravity * Time.deltaTime;
 
-        _controller.Move(_velocity * Time.deltaTime);
+        _controller.Move(_velocity + move * (_speed + additionnalMoveSpeed) * Time.deltaTime);
+
+        //Debug.Log((new Vector3(_velocity.x, 0, _velocity.z) + move * (_speed + additionnalMoveSpeed)).magnitude);
     }
 
     private void OnDrawGizmosSelected()

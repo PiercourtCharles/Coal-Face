@@ -995,7 +995,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 2
-  m_Radius: 0.4
+  m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.7
   m_SkinWidth: 0.08
@@ -1015,8 +1015,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsParalysed: 0
   _controller: {fileID: 1914639575586123050}
-  _speed: 3
-  _runSpeed: 1
+  _speed: 2
+  _runSpeed: 2
+  _crouchSpeed: 1
+  _crouchCenterCollider: {x: 0, y: -0.75, z: 0}
+  _crouchHeightCollider: 0.5
   _gravity: -15
   _jumpForce: 1.5
   _charaAnimator: {fileID: 978494978797149932}
@@ -4737,7 +4740,7 @@ Transform:
   m_GameObject: {fileID: 7709177460065122754}
   serializedVersion: 2
   m_LocalRotation: {x: 0.040928673, y: 0.012481513, z: -0.03251162, w: 0.998555}
-  m_LocalPosition: {x: -0, y: 0.0791362, z: 0.045731593}
+  m_LocalPosition: {x: 0, y: 0.0791362, z: 0.045731593}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
