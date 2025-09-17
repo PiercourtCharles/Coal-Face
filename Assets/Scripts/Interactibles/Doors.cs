@@ -7,6 +7,7 @@ public class Doors : MonoBehaviour
     public bool IsLocked = false;
     public DoorInteraction DoorInt = new DoorInteraction();
 
+    [SerializeField] Task _doorTask;
     [SerializeField] Transform _door;
     [SerializeField] Vector2 _openAngle;
     [SerializeField] float _doorSpeed;
@@ -42,6 +43,8 @@ public class Doors : MonoBehaviour
                 _isDoorOpen = false;
             }
         }
+
+        _doorTask.TaskComplete();
     }
 
     Vector3 ChangeRot(float value)
