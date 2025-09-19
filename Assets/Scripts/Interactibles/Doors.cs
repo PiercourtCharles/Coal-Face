@@ -44,7 +44,8 @@ public class Doors : MonoBehaviour
             }
         }
 
-        _doorTask.TaskComplete();
+        if (_doorTask != null)
+            _doorTask.TaskComplete();
     }
 
     Vector3 ChangeRot(float value)

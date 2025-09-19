@@ -113,7 +113,7 @@ public partial class @CharaControl: IInputActionCollection2, IDisposable
                     ""name"": ""Interact"",
                     ""type"": ""Button"",
                     ""id"": ""1c713026-435f-4a3d-afbd-a7dea813be4e"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -140,7 +140,7 @@ public partial class @CharaControl: IInputActionCollection2, IDisposable
                     ""name"": ""Eject"",
                     ""type"": ""Button"",
                     ""id"": ""4df213b0-6d50-460b-b8e3-57cb63e5d121"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -401,7 +401,7 @@ public partial class @CharaControl: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4c8c0a15-4167-4125-8903-5f6380dce492"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

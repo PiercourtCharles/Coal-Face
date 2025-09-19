@@ -5,6 +5,9 @@ public class ObjectsComponents : MonoBehaviour
     public ObjectInteraction ObjInt = new ObjectInteraction();
     public ObjectInfos ObjectInfos;
 
+    [SerializeField] Task _grabTask;
+    [SerializeField] Task _dropTask;
+
     Transform _originalParent;
     Rigidbody _rb;
 
@@ -45,6 +48,9 @@ public class ObjectsComponents : MonoBehaviour
             transform.SetParent(tf);
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.Euler(Vector3.zero);
+
+            if (_grabTask != null)
+                _grabTask.TaskComplete();
         }
         else
         {
@@ -53,6 +59,9 @@ public class ObjectsComponents : MonoBehaviour
 
             _rb = gameObject.AddComponent<Rigidbody>();
             _rb.AddForce(transform.forward * 10, ForceMode.Impulse);
+
+            if (_dropTask != null)
+                _dropTask.TaskComplete();
         }
     }
 }
