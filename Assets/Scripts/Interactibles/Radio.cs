@@ -5,7 +5,7 @@ public class Radio : MonoBehaviour
     public GameObject ActiveObjectInteract;
     public bool IsActive = false;
 
-    [SerializeField] Dialogs _dialog;
+    [SerializeField] Dialog _dialog;
     [SerializeField] Vector3 _openPos;
     [SerializeField] Vector3 _openRot;
     [SerializeField] Vector3 _closePos;

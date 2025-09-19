@@ -6,11 +6,12 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI NameText;
     public TextMeshProUGUI DialogText;
 
+    [SerializeField] TaskDialog[] _dialogtasks;
     [SerializeField] GameObject _DialogParent;
-    [SerializeField] Dialogs _actualDialogue;
+    [SerializeField] Dialog _actualDialogue;
     [SerializeField] float _timerValue;
 
-    Dialogs _dialogue;
+    Dialog _dialogue;
     float _timer;
 
     private void Start()
@@ -32,7 +33,7 @@ public class DialogueManager : MonoBehaviour
                 NextDialogue();
             }
         }
-        
+
         //if (Input.GetMouseButtonDown(1))     //Input exemple call dialog
         //{
         //    UpdateDialogue(_dialogue);
@@ -49,6 +50,15 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+            if (_dialogtasks.Length > 0)
+            {
+                for (int i = 0; i < _dialogtasks.Length; i++)
+                {
+                    if (_actualDialogue.ID == _dialogtasks[i].ID)
+                        _dialogtasks[i].TaskComplete();
+                }
+            }
+
             _DialogParent.SetActive(false);
             _actualDialogue = null;
         }
@@ -57,7 +67,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     //Activate dialog box
-    public void UpdateDialogue(Dialogs dialogue)
+    public void UpdateDialogue(Dialog dialogue)
     {
         if (dialogue != null)
         {

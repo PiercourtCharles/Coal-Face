@@ -6,6 +6,8 @@ public class Interactible : MonoBehaviour
     public bool IsActive = false;
     public bool IsActivableOut = false;
 
+    [SerializeField] Task _activeTask;
+    [SerializeField] Task _desactiveTask;
     [SerializeField] Vector3 _openRot;
     [SerializeField] Vector3 _closeRot;
     [SerializeField] Vector3 _actualTarget;
@@ -51,11 +53,17 @@ public class Interactible : MonoBehaviour
         {
             _actualTarget = _openRot;
             IsActive = true;
+
+            if (_activeTask != null)
+                _activeTask.TaskComplete();
         }
         else
         {
             _actualTarget = _closeRot;
             IsActive = false;
+
+            if (_desactiveTask != null)
+                _desactiveTask.TaskComplete();
         }
     }
 
@@ -65,11 +73,17 @@ public class Interactible : MonoBehaviour
         {
             _actualTarget = _openRot;
             IsActive = true;
+
+            if (_activeTask != null)
+                _activeTask.TaskComplete();
         }
         else
         {
             _actualTarget = _closeRot;
             IsActive = false;
+
+            if (_desactiveTask != null)
+                _desactiveTask.TaskComplete();
         }
     }
 }

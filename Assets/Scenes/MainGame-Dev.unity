@@ -1025,6 +1025,8 @@ MonoBehaviour:
   ActiveObjectInteract: {fileID: 642414211}
   IsActive: 0
   IsActivableOut: 0
+  _activeTask: {fileID: 0}
+  _desactiveTask: {fileID: 0}
   _openRot: {x: -75, y: 0, z: 0}
   _closeRot: {x: -105, y: 0, z: 0}
   _actualTarget: {x: 0, y: 0, z: 0}
@@ -3163,6 +3165,8 @@ MonoBehaviour:
   ActiveObjectInteract: {fileID: 0}
   IsActive: 0
   IsActivableOut: 0
+  _activeTask: {fileID: 0}
+  _desactiveTask: {fileID: 0}
   _openRot: {x: -75, y: 0, z: 0}
   _closeRot: {x: -105, y: 0, z: 0}
   _actualTarget: {x: 0, y: 0, z: 0}
@@ -9281,6 +9285,8 @@ MonoBehaviour:
   ActiveObjectInteract: {fileID: 1938214271}
   IsActive: 0
   IsActivableOut: 0
+  _activeTask: {fileID: 0}
+  _desactiveTask: {fileID: 0}
   _openRot: {x: -75, y: 0, z: 0}
   _closeRot: {x: -105, y: 0, z: 0}
   _actualTarget: {x: 0, y: 0, z: 0}
@@ -16620,7 +16626,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7031156005728589688, guid: 6f5f82940db6ce74ea6a89b843a431fa, type: 3}
   m_PrefabInstance: {fileID: 1911953090}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1410535364}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f43e1327b48a8c47a034c978f673e83, type: 3}
@@ -20153,6 +20159,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409508401}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1410535364 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8732720201004871953, guid: 6f5f82940db6ce74ea6a89b843a431fa, type: 3}
+  m_PrefabInstance: {fileID: 1911953090}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1410535366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410535364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59bf7d4f7376a0043a45ee333c104341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TaskText: Dialog
+  _dialog: {fileID: 11400000, guid: 36b27cdde2b2b3b4ab8be52797e2263e, type: 2}
 --- !u!1001 &1410929064
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23766,6 +23791,7 @@ MonoBehaviour:
   _display: {fileID: 1225538546}
   Tasks:
   - {fileID: 1602175688}
+  - {fileID: 1410535366}
   - {fileID: 1416522262}
   - {fileID: 781343861}
   - {fileID: 558127050}
@@ -28816,6 +28842,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: First Person Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6807600303495162238, guid: 6f5f82940db6ce74ea6a89b843a431fa, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 6807600303495162238, guid: 6f5f82940db6ce74ea6a89b843a431fa, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6807600303495162238, guid: 6f5f82940db6ce74ea6a89b843a431fa, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031156005728589688, guid: 6f5f82940db6ce74ea6a89b843a431fa, type: 3}
+      propertyPath: _dialogtask
+      value: 
+      objectReference: {fileID: 1410535366}
+    - target: {fileID: 7031156005728589688, guid: 6f5f82940db6ce74ea6a89b843a431fa, type: 3}
+      propertyPath: _dialogtasks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031156005728589688, guid: 6f5f82940db6ce74ea6a89b843a431fa, type: 3}
+      propertyPath: '_dialogtasks.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1410535366}
     - target: {fileID: 7969437767620845226, guid: 6f5f82940db6ce74ea6a89b843a431fa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 24.41
@@ -28862,7 +28912,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7153576512895968932, guid: 6f5f82940db6ce74ea6a89b843a431fa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1225538545}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8732720201004871953, guid: 6f5f82940db6ce74ea6a89b843a431fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1410535366}
   m_SourcePrefab: {fileID: 100100000, guid: 6f5f82940db6ce74ea6a89b843a431fa, type: 3}
 --- !u!4 &1913017179 stripped
 Transform:
@@ -30054,6 +30107,8 @@ MonoBehaviour:
   ActiveObjectInteract: {fileID: 0}
   IsActive: 0
   IsActivableOut: 0
+  _activeTask: {fileID: 0}
+  _desactiveTask: {fileID: 0}
   _openRot: {x: -75, y: 0, z: 0}
   _closeRot: {x: -105, y: 0, z: 0}
   _actualTarget: {x: 0, y: 0, z: 0}
@@ -34213,6 +34268,8 @@ MonoBehaviour:
   ActiveObjectInteract: {fileID: 0}
   IsActive: 0
   IsActivableOut: 0
+  _activeTask: {fileID: 0}
+  _desactiveTask: {fileID: 0}
   _openRot: {x: -90, y: 0, z: -90}
   _closeRot: {x: 0, y: 0, z: -90}
   _actualTarget: {x: 0, y: 0, z: 0}
@@ -34253,6 +34310,8 @@ MonoBehaviour:
   ActiveObjectInteract: {fileID: 0}
   IsActive: 1
   IsActivableOut: 0
+  _activeTask: {fileID: 0}
+  _desactiveTask: {fileID: 0}
   _openRot: {x: -60, y: 0, z: 0}
   _closeRot: {x: -30, y: 0, z: 0}
   _actualTarget: {x: 0, y: 0, z: 0}
