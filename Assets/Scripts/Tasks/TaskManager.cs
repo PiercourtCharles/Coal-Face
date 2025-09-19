@@ -40,7 +40,7 @@ public class TaskManager : MonoBehaviour
             {
                 //index--;
                 _display.gameObject.SetActive(false);
-                Debug.Log("No more tasks");
+                //Debug.Log("No more tasks");
             }
             else
             {
@@ -48,7 +48,7 @@ public class TaskManager : MonoBehaviour
                 _display.UpdateText(Tasks[index].TaskText);
             }
 
-            Debug.Log("Completed");
+            //Debug.Log("Completed");
             return true;
         }
 
@@ -61,9 +61,9 @@ public class TaskManager : MonoBehaviour
         {
             if (!Tasks[i].IsComplete)
                 return false;
-            Debug.Log($"Task {i} Complete");
+            //Debug.Log($"Task {i} Complete");
         }
-        Debug.Log("All completed");
+        //Debug.Log("All completed");
         return true;
     }
 }

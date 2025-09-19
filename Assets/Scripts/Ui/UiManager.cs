@@ -52,9 +52,15 @@ public class UiManager : MonoBehaviour
                 _uiMenu.gameObject.SetActive(IsGamePause);
 
                 if (!IsGamePause)
+                {
+                    Time.timeScale = 1;
                     Cursor.lockState = CursorLockMode.Locked;
+                }
                 else
+                {
+                    Time.timeScale = 0;
                     Cursor.lockState = CursorLockMode.None;
+                }
             }
 
             if (_uiMenu.gameObject.activeSelf)

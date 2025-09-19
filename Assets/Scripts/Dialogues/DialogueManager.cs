@@ -5,6 +5,7 @@ public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI NameText;
     public TextMeshProUGUI DialogText;
+    public AudioSource Audio;
 
     [SerializeField] TaskDialog[] _dialogtasks;
     [SerializeField] GameObject _DialogParent;
@@ -74,6 +75,13 @@ public class DialogueManager : MonoBehaviour
             _DialogParent.SetActive(true);
             _actualDialogue = dialogue;
             _actualDialogue.UpdateDialog(NameText, DialogText);
+
+            if (_actualDialogue.Clip != null)
+            {
+                Audio.clip = _actualDialogue.Clip;
+                Audio.Play();
+            }
+
             _timer = 0;
         }
     }

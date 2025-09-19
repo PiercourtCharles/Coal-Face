@@ -7,12 +7,12 @@ public class Task : MonoBehaviour
 
     public virtual void Begin()
     {
-        Debug.Log("Begin");
+        //Debug.Log("Begin");
     }
 
     public virtual void End()
     {
-        Debug.Log("End");
+        //Debug.Log("End");
     }
 
     public void TaskComplete()
@@ -23,7 +23,7 @@ public class Task : MonoBehaviour
         if (!TaskManager.Instance.CheckOrder(this))
             return;
 
-        Debug.Log("Check");
+        //Debug.Log("Check");
         IsComplete = true;
         TaskManager.Instance.CheckTask();
     }
